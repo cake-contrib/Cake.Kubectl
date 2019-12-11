@@ -1,11 +1,6 @@
 # Cake.Kubernetes
 
-[![standard-readme compliant][]][standard-readme]
 [![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors)
-[![Appveyor build][appveyorimage]][appveyor]
-[![Travis build][travisimage]][travis]
-[![Codecov Report][codecovimage]][codecov]
-[![NuGet package][nugetimage]][nuget]
 
 > A Cake addin for Kubernetes
 
@@ -36,7 +31,7 @@ Task("MyTask").Does(() => {
 
 ## Maintainer
 
-[Roma Marusyk @Marusyk][maintainer]
+[Roman Marusyk @Marusyk](maintainer)
 
 ## Contributing
 
@@ -59,21 +54,4 @@ Thanks goes to these wonderful people ([emoji key][emoji-key]):
 
 ## License
 
-[MIT License © Roma Marusyk][license]
-
-[all-contributors]: https://github.com/all-contributors/all-contributors
-[appveyor]: https://ci.appveyor.com/project/roman marusyk/cake-kubernetes
-[appveyorimage]: https://img.shields.io/appveyor/ci/roman marusyk/cake-kubernetes.svg?logo=appveyor&style=flat-square
-[codecov]: https://codecov.io/gh/Roman Marusyk/Cake.Kubernetes
-[codecovimage]: https://img.shields.io/codecov/c/github/Roman Marusyk/Cake.Kubernetes.svg?logo=codecov&style=flat-square
-[contrib-covenant]: https://www.contributor-covenant.org/version/1/4/code-of-conduct
-[contributing]: CONTRIBUTING.md
-[emoji-key]: https://allcontributors.org/docs/en/emoji-key
-[maintainer]: https://github.com/Marusyk
-[nuget]: https://nuget.org/packages/Cake.Kubernetes
-[nugetimage]: https://img.shields.io/nuget/v/Cake.Kubernetes.svg?logo=nuget&style=flat-square
-[license]: LICENSE
-[standard-readme]: https://github.com/RichardLitt/standard-readme
-[standard-readme compliant]: https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square
-[travis]: https://travis-ci.org/Roman Marusyk/Cake.Kubernetes
-[travisimage]: https://img.shields.io/travis/Roman Marusyk/Cake.Kubernetes.svg?logo=travis&style=flat-square
+[MIT License © Roman Marusyk](license)
