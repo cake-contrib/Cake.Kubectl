@@ -1,0 +1,17 @@
+{
+  "generator-cake-addin": {
+    "promptValues": {
+      "projectName": "Kubernetes",
+      "repositoryOwner": "Roman Marusyk",
+      "projectMaintainer": "Marusyk",
+      "author": "Roma Marusyk",
+      "description": "A Cake addin for Kubernetes",
+      "licenseType": "MIT",
+      "sourceDir": "./src",
+      "scriptName": "build.cake",
+      "enableAllContributors": true,
+      "enableWyam": true,
+      "enableTravis": true
+    }
+  }
+}
