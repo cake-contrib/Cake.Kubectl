@@ -57,7 +57,6 @@ dlldata.c
 BenchmarkDotNet.Artifacts/
 
 # .NET Core
-# DNX
 project.lock.json
 project.fragment.lock.json
 artifacts/
@@ -68,7 +67,6 @@ StyleCopReport.xml
 # Files built by Visual Studio
 *_i.c
 *_p.c
-*_i.h
 *_h.h
 *.ilk
 *.meta
@@ -128,9 +126,6 @@ $tf/
 _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
-
-# JustCode is a .NET coding add-in
-.JustCode
 
 # TeamCity is a build add-in
 _TeamCity*
@@ -222,7 +217,7 @@ _pkginfo.txt
 # files ending in .cache can be ignored
 *.[Cc]ache
 # but keep track of directories ending in .cache
-!*.[Cc]ache/
+!?*.[Cc]ache/
 
 # Others
 ClientBin/
@@ -306,16 +301,6 @@ paket-files/
 
 # CodeRush personal settings
 .cr/personal
-
-# JetBrains Rider
-.idea/
-*.sln.iml
-
-# Build related
-tools/**
-!tools/packages.config
-BuildArtifacts/
-.dotnet/
 
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
