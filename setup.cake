@@ -6,9 +6,9 @@ BuildParameters.SetParameters(
     context: Context, 
     buildSystem: BuildSystem,
     sourceDirectoryPath: "./src",
-    title: "Cake.Kubernetes",
+    title: "Cake.Kubectl",
     repositoryOwner: "cake-contrib",
-    repositoryName: "Cake.Kubernetes",
+    repositoryName: "Cake.Kubectl",
     appVeyorAccountName: "cakecontrib",
 	shouldRunDupFinder: false,
     shouldRunInspectCode: false,
@@ -18,7 +18,7 @@ BuildParameters.PrintParameters(Context);
 
 ToolSettings.SetToolSettings(
     context: Context,
-    dupFinderExcludePattern: new string[] { BuildParameters.RootDirectoryPath + "/src/Cake.Kubernetes.Tests/*.cs" },
+    dupFinderExcludePattern: new string[] { BuildParameters.RootDirectoryPath + "/src/Cake.Kubectl.Tests/*.cs" },
     testCoverageFilter: "+[*]* -[nunit.*]* -[Cake.Core]* -[Cake.Testing]* -[*.Tests]* ",
     testCoverageExcludeByAttribute: "*.ExcludeFromCodeCoverage*",
     testCoverageExcludeByFile: "*/*Designer.cs;*/*.g.cs;*/*.g.i.cs");
