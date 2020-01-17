@@ -1,17 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cake.Kubernetes", "Cake.Kubectl\Cake.Kubectl.csproj", "{2A7BDE82-A5EB-4613-844F-4092775876D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cake.Kubectl", "Cake.Kubectl\Cake.Kubectl.csproj", "{2A7BDE82-A5EB-4613-844F-4092775876D6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cake.Kubernetes.Tests", "Cake.Kubectl.Tests\Cake.Kubectl.Tests.csproj", "{B93872BB-A9CB-4858-BB01-19C5F8F8B422}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cake.Kubectl.Tests", "Cake.Kubectl.Tests\Cake.Kubectl.Tests.csproj", "{B93872BB-A9CB-4858-BB01-19C5F8F8B422}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3509B976-7BAF-4918-949C-41F194C5E424}"
 	ProjectSection(SolutionItems) = preProject
 		..\.appveyor.yml = ..\.appveyor.yml
 		..\nuspec\nuget\Cake.Kubectl.nuspec = ..\nuspec\nuget\Cake.Kubectl.nuspec
 		..\LICENSE = ..\LICENSE
+		..\tools\packages.config = ..\tools\packages.config
 		..\README.md = ..\README.md
 		..\setup.cake = ..\setup.cake
 	EndProjectSection
