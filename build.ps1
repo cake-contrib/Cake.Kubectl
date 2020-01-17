@@ -37,7 +37,7 @@ https://cakebuild.net
 
 [CmdletBinding()]
 Param(
-    [string]$Script = "build.cake",
+    [string]$Script = "recipe.cake",
     [string]$Target,
     [string]$Configuration,
     [ValidateSet("Quiet", "Minimal", "Normal", "Verbose", "Diagnostic")]
@@ -176,7 +176,7 @@ if(-Not $SkipToolPackageRestore.IsPresent) {
     ($md5Hash -ne (Get-Content $PACKAGES_CONFIG_MD5 ))) {
         Write-Verbose -Message "Missing or changed package.config hash..."
         Get-ChildItem -Exclude packages.config,nuget.exe,Cake.Bakery |
-        Remove-Item -Recurse -Force
+        Remove-Item -Recurse
     }
 
     Write-Verbose -Message "Restoring tools from NuGet..."
@@ -240,10 +240,10 @@ $CAKE_EXE_INVOCATION = if ($IsLinux -or $IsMacOS) {
     "`"$CAKE_EXE`""
 }
 
- # Build an array (not a string) of Cake arguments to be joined later
-$cakeArguments = @()
-if ($Script) { $cakeArguments += "`"$Script`"" }
-if ($Target) { $cakeArguments += "-target=`"$Target`"" }
+
+# Build Cake arguments
+$cakeArguments = @("$Script");
+if ($Target) { $cakeArguments += "-target=$Target" }
 if ($Configuration) { $cakeArguments += "-configuration=$Configuration" }
 if ($Verbosity) { $cakeArguments += "-verbosity=$Verbosity" }
 if ($ShowDescription) { $cakeArguments += "-showdescription" }
