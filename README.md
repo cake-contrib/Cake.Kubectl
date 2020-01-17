@@ -32,4 +32,4 @@ This version is built against Kubectl CLI tools version 1.14.
 
 ## Credits
 
-Brought to you by [Miha Markic](https://github.com/MihaMarkic) ([@MihaMarkic](https://twitter.com/MihaMarkic/)) and contributors.
+Brought to you by [Miha Markic](https://github.com/MihaMarkic) ([@MihaMarkic](https://twitter.com/MihaMarkic/)) and contributors. 
