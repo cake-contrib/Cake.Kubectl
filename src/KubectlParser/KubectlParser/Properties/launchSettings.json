@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "KubectlParser": {
-      "commandName": "Project",
-      "commandLineArgs": "D:\\GitProjects\\Righthand\\Cake\\Cake.Kubernetes\\src\\Cake.Kubernetes"
-    }
-  }
-}
