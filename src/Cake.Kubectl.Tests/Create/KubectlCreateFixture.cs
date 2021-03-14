@@ -11,11 +11,9 @@ namespace Cake.Kubectl.Tests.Create
 {
     public class KubectlCreateFixture : ToolFixture<KubectlCreateSettings>, ICakeContext
     {
-        public string Path { get; set; }
-        IFileSystem fileSystem;
-        ICakeEnvironment environment;
-        IFileSystem ICakeContext.FileSystem => fileSystem;
-        ICakeEnvironment ICakeContext.Environment => environment;
+        public string[] Services { get; set; } = new string[0];
+        IFileSystem ICakeContext.FileSystem => FileSystem;
+        ICakeEnvironment ICakeContext.Environment => Environment;
         public ICakeLog Log => Log;
         ICakeArguments ICakeContext.Arguments => throw new NotImplementedException();
         IProcessRunner ICakeContext.ProcessRunner => ProcessRunner;
@@ -25,15 +23,6 @@ namespace Cake.Kubectl.Tests.Create
 
         public KubectlCreateFixture() : base("kubectl")
         {
-            Tools = Substitute.For<IToolLocator>();
-            fileSystem = Substitute.For<IFileSystem>();
-            environment = Substitute.For<ICakeEnvironment>();
-            var toolPath = new FilePath("kubectl");
-            var file = Substitute.For<IFile>();
-            file.Exists.Returns(true);
-            fileSystem.GetFile(toolPath).Returns(file);
-            environment.WorkingDirectory.Returns("C:/Temp");
-            Tools.Resolve("kubectl").Returns(toolPath);
             ProcessRunner.Process.SetStandardOutput(new string[] { });
         }
         protected override void RunTool()
