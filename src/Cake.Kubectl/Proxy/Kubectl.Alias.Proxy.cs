@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Creates a proxy server or application-level gateway between localhost and the Kubectl API Server. It also allows serving static content over specified HTTP path. All incoming data enters through one port and gets forwarded to the remote kubernetes API Server port, except for the path matching the static content path.
+		/// Creates a proxy server or application-level gateway between localhost and the Kubernetes API server. It also allows serving static content over specified HTTP path. All incoming data enters through one port and gets forwarded to the remote Kubernetes API server port, except for the path matching the static content path.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>
@@ -26,7 +26,7 @@ namespace Cake.Kubectl
 			runner.Run("proxy", settings ?? new KubectlProxySettings(), arguments);
 		}
 		/// <summary>
-		/// Creates a proxy server or application-level gateway between localhost and the Kubectl API Server. It also allows serving static content over specified HTTP path. All incoming data enters through one port and gets forwarded to the remote kubernetes API Server port, except for the path matching the static content path.
+		/// Creates a proxy server or application-level gateway between localhost and the Kubernetes API server. It also allows serving static content over specified HTTP path. All incoming data enters through one port and gets forwarded to the remote Kubernetes API server port, except for the path matching the static content path.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>

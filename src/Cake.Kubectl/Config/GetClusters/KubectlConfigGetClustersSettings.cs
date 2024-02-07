@@ -7,7 +7,7 @@ namespace Cake.Kubectl
 	///
 	/// </summary>
 	/// <example>
-	///   # List the clusters kubectl knows about
+	///   # List the clusters that kubectl knows about
 	///   kubectl config get-clusters
 	/// </example>
 	[CompilerGenerated]

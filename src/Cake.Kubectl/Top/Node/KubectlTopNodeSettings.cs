@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 namespace Cake.Kubectl
 {
 	/// <summary>
-	/// Display Resource (CPU/Memory/Storage) usage of nodes.
+	/// Display resource (CPU/memory) usage of nodes.
 	///
 	/// 
 	///  The top-node command allows you to see the resource consumption of nodes.
@@ -19,30 +19,6 @@ namespace Cake.Kubectl
 	public sealed class KubectlTopNodeSettings : AutoToolSettings
 	{
 		/// <summary>
-		/// --heapster-namespace
-		///
-		/// Namespace Heapster service is located in
-		/// </summary>
-		public string HeapsterNamespace { get; set; }
-		/// <summary>
-		/// --heapster-port
-		///
-		/// Port name in service to use
-		/// </summary>
-		public string HeapsterPort { get; set; }
-		/// <summary>
-		/// --heapster-scheme
-		///
-		/// Scheme (http or https) to connect to Heapster as
-		/// </summary>
-		public string HeapsterScheme { get; set; }
-		/// <summary>
-		/// --heapster-service
-		///
-		/// Name of Heapster service
-		/// </summary>
-		public string HeapsterService { get; set; }
-		/// <summary>
 		/// --no-headers
 		///
 		/// If present, print output without headers
@@ -51,8 +27,26 @@ namespace Cake.Kubectl
 		/// <summary>
 		/// -l, --selector
 		///
-		/// Selector (label query) to filter on, supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2)
+		/// Selector (label query) to filter on, supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2). Matching objects must satisfy all of the specified label constraints.
 		/// </summary>
-		public string Selector { get; set; }
+		public string? Selector { get; set; }
+		/// <summary>
+		/// --show-capacity
+		///
+		/// Print node resources based on Capacity instead of Allocatable(default) of the nodes.
+		/// </summary>
+		public bool? ShowCapacity { get; set; }
+		/// <summary>
+		/// --sort-by
+		///
+		/// If non-empty, sort nodes list using specified field. The field can be either 'cpu' or 'memory'.
+		/// </summary>
+		public string? SortBy { get; set; }
+		/// <summary>
+		/// --use-protocol-buffers
+		///
+		/// Enables using protocol-buffers to access Metrics API.
+		/// </summary>
+		public bool? UseProtocolBuffers { get; set; }
 	}
 }

@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Create a resourcequota with the specified name, hard limits and optional scopes
+		/// Create a resource quota with the specified name, hard limits, and optional scopes.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>
@@ -26,7 +26,7 @@ namespace Cake.Kubectl
 			runner.Run("create quota", settings ?? new KubectlCreateQuotaSettings(), arguments);
 		}
 		/// <summary>
-		/// Create a resourcequota with the specified name, hard limits and optional scopes
+		/// Create a resource quota with the specified name, hard limits, and optional scopes.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>

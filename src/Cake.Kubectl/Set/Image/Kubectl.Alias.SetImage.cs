@@ -14,7 +14,7 @@ namespace Cake.Kubectl
 		/// 
 		///  Possible resources include (case insensitive):
 		/// 
-		///   pod (po), replicationcontroller (rc), deployment (deploy), daemonset (ds), replicaset (rs)
+		///   pod (po), replicationcontroller (rc), deployment (deploy), daemonset (ds), statefulset (sts), cronjob (cj), replicaset (rs)
 		/// </summary>
 		/// <param name="context">The context.</param>
 		/// <param name="settings">The settings.</param>
@@ -35,7 +35,7 @@ namespace Cake.Kubectl
 		/// 
 		///  Possible resources include (case insensitive):
 		/// 
-		///   pod (po), replicationcontroller (rc), deployment (deploy), daemonset (ds), replicaset (rs)
+		///   pod (po), replicationcontroller (rc), deployment (deploy), daemonset (ds), statefulset (sts), cronjob (cj), replicaset (rs)
 		/// </summary>
 		/// <param name="context">The context.</param>
 		/// <param name="settings">The settings.</param>

@@ -1,50 +1,42 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net50;netstandard2.0;net46</TargetFrameworks>
+    <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <CodeAnalysisRuleSet></CodeAnalysisRuleSet>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>Cake.Kubectl</PackageId>
-    <Title>Cake.Kubectl</Title>
-    <Description>Kubectl Addin for Cake Deployment Automation System.</Description>
-    <PackageTags>Cake Script Deploy Kubectl Deployment cake-addin</PackageTags>
-    <Authors>Miha Markic, Roman Marusyk</Authors>
-    <Owners>Miha Markic, Roman Marusyk, cake-contrib</Owners>
-    <RepositoryUrl>https://github.com/cake-contrib/Cake.Kubectl.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageProjectUrl>https://github.com/cake-contrib/Cake.Kubectl</PackageProjectUrl>
-    <PackageIcon>icon.png</PackageIcon>
-    <!-- for compatibility only -->
-    <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
-    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-  </PropertyGroup>
+  <PackageId>Cake.Kubectl</PackageId>
+  <Title>Cake.Kubectl</Title>
+  <PackageTags>Cake Script Build Test Deploy Kubectl Deployment cake-addin addin cake-build</PackageTags>
+  <Authors>Miha Markic, Roman Marusyk</Authors>
+  <Owners>Miha Markic, Roman Marusyk, cake-contrib</Owners>
+  <Description>Kubectl Addin for Cake Build, Test and Deployment Automation System.</Description>
+  <RepositoryUrl>https://github.com/cake-contrib/Cake.Kubectl.git</RepositoryUrl>
+  <RepositoryType>git</RepositoryType>
+  <IncludeSymbols>true</IncludeSymbols>
+  <PackageProjectUrl>https://github.com/cake-contrib/Cake.Kubectl</PackageProjectUrl>
+  <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+  <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  <PublishRepositoryUrl>true</PublishRepositoryUrl>
+  <EmbedUntrackedSources>true</EmbedUntrackedSources>
+</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard2.0\Cake.Kubectl.xml</DocumentationFile>
-  </PropertyGroup>
+<PropertyGroup Condition="'$(Configuration)'=='Release'">
+  <DocumentationFile>bin\Release\net6.0\Cake.Kubectl.xml</DocumentationFile>
+</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Cake.Addin.Analyzer" Version="0.1.3">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Cake.Core" Version="1.0.0" PrivateAssets="All" />
-    <PackageReference Include="CakeContrib.Guidelines" Version="0.5.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="icon.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+<ItemGroup>
+  <PackageReference Include="Cake.Core" Version="4.0.0" PrivateAssets="All" />
+  <PackageReference Include="CakeContrib.Guidelines" Version="1.5.1">
+    <PrivateAssets>all</PrivateAssets>
+    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+  </PackageReference>
+  <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
+    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    <PrivateAssets>all</PrivateAssets>
+  </PackageReference>
+</ItemGroup>
 
 </Project>

@@ -12,7 +12,7 @@ namespace Cake.Kubectl
 	/// 
 	///  Possible resources include (case insensitive):
 	/// 
-	///   pod (po), replicationcontroller (rc), deployment (deploy), daemonset (ds), job, replicaset (rs)
+	///   pod (po), replicationcontroller (rc), deployment (deploy), daemonset (ds), statefulset (sts), cronjob (cj), replicaset (rs)
 	/// </summary>
 	/// <example>
 	///   # Update deployment 'registry' with a new environment variable
@@ -69,43 +69,49 @@ namespace Cake.Kubectl
 		///
 		/// The names of containers in the selected pod templates to change - may use wildcards
 		/// </summary>
-		public string Containers { get; set; }
+		public string? Containers { get; set; }
 		/// <summary>
 		/// --dry-run
 		///
-		/// If true, only print the object that would be sent, without sending it.
+		/// Must be "none", "server", or "client". If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource.
 		/// </summary>
-		public bool? DryRun { get; set; }
+		public string? DryRun { get; set; }
 		/// <summary>
 		/// -e, --env
 		///
 		/// Specify a key-value pair for an environment variable to set into each container.
 		/// </summary>
-		public string Env { get; set; }
+		public string? Env { get; set; }
+		/// <summary>
+		/// --field-manager
+		///
+		/// Name of the manager used to track field ownership.
+		/// </summary>
+		public string? FieldManager { get; set; }
 		/// <summary>
 		/// -f, --filename
 		///
 		/// Filename, directory, or URL to files the resource to update the env
 		/// </summary>
-		public string Filename { get; set; }
+		public string? Filename { get; set; }
 		/// <summary>
 		/// --from
 		///
 		/// The name of a resource from which to inject environment variables
 		/// </summary>
-		public string From { get; set; }
+		public string? From { get; set; }
 		/// <summary>
 		/// --keys
 		///
 		/// Comma-separated list of keys to import from specified resource
 		/// </summary>
-		public string Keys { get; set; }
+		public string? Keys { get; set; }
 		/// <summary>
 		/// -k, --kustomize
 		///
 		/// Process the kustomization directory. This flag can't be used together with -f or -R.
 		/// </summary>
-		public string Kustomize { get; set; }
+		public string? Kustomize { get; set; }
 		/// <summary>
 		/// --list
 		///
@@ -121,9 +127,9 @@ namespace Cake.Kubectl
 		/// <summary>
 		/// -o, --output
 		///
-		/// Output format. One of: json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-file.
+		/// Output format. One of: (json, yaml, name, go-template, go-template-file, template, templatefile, jsonpath, jsonpath-as-json, jsonpath-file).
 		/// </summary>
-		public string Output { get; set; }
+		public string? Output { get; set; }
 		/// <summary>
 		/// --overwrite
 		///
@@ -135,7 +141,7 @@ namespace Cake.Kubectl
 		///
 		/// Prefix to append to variable names
 		/// </summary>
-		public string Prefix { get; set; }
+		public string? Prefix { get; set; }
 		/// <summary>
 		/// -R, --recursive
 		///
@@ -151,14 +157,20 @@ namespace Cake.Kubectl
 		/// <summary>
 		/// -l, --selector
 		///
-		/// Selector (label query) to filter on
+		/// Selector (label query) to filter on, supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2). Matching objects must satisfy all of the specified label constraints.
 		/// </summary>
-		public string Selector { get; set; }
+		public string? Selector { get; set; }
+		/// <summary>
+		/// --show-managed-fields
+		///
+		/// If true, keep the managedFields when printing objects in JSON or YAML format.
+		/// </summary>
+		public bool? ShowManagedFields { get; set; }
 		/// <summary>
 		/// --template
 		///
 		/// Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
 		/// </summary>
-		public string Template { get; set; }
+		public string? Template { get; set; }
 	}
 }

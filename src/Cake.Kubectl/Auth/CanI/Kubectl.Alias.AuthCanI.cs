@@ -12,7 +12,7 @@ namespace Cake.Kubectl
 		/// Check whether an action is allowed.
 		///
 		/// 
-		///  VERB is a logical Kubectl API verb like 'get', 'list', 'watch', 'delete', etc. TYPE is a Kubectl resource. Shortcuts and groups will be resolved. NONRESOURCEURL is a partial URL starts with "/". NAME is the name of a particular Kubectl resource.
+		///  VERB is a logical Kubernetes API verb like 'get', 'list', 'watch', 'delete', etc. TYPE is a Kubernetes resource. Shortcuts and groups will be resolved. NONRESOURCEURL is a partial URL that starts with "/". NAME is the name of a particular Kubernetes resource. This command pairs nicely with impersonation. See --as global flag.
 		/// </summary>
 		/// <param name="context">The context.</param>
 		/// <param name="settings">The settings.</param>
@@ -31,7 +31,7 @@ namespace Cake.Kubectl
 		/// Check whether an action is allowed.
 		///
 		/// 
-		///  VERB is a logical Kubectl API verb like 'get', 'list', 'watch', 'delete', etc. TYPE is a Kubectl resource. Shortcuts and groups will be resolved. NONRESOURCEURL is a partial URL starts with "/". NAME is the name of a particular Kubectl resource.
+		///  VERB is a logical Kubernetes API verb like 'get', 'list', 'watch', 'delete', etc. TYPE is a Kubernetes resource. Shortcuts and groups will be resolved. NONRESOURCEURL is a partial URL that starts with "/". NAME is the name of a particular Kubernetes resource. This command pairs nicely with impersonation. See --as global flag.
 		/// </summary>
 		/// <param name="context">The context.</param>
 		/// <param name="settings">The settings.</param>

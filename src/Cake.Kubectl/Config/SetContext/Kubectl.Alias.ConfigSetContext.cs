@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Sets a context entry in kubeconfig
+		/// Set a context entry in kubeconfig.
 		///
 		/// 
 		///  Specifying a name that already exists will merge new fields on top of existing values for those fields.
@@ -28,7 +28,7 @@ namespace Cake.Kubectl
 			runner.Run("config set-context", settings ?? new KubectlConfigSetContextSettings(), arguments);
 		}
 		/// <summary>
-		/// Sets a context entry in kubeconfig
+		/// Set a context entry in kubeconfig.
 		///
 		/// 
 		///  Specifying a name that already exists will merge new fields on top of existing values for those fields.

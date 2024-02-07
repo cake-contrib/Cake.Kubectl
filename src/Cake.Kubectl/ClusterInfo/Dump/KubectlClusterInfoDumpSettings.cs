@@ -3,10 +3,10 @@ using System.Runtime.CompilerServices;
 namespace Cake.Kubectl
 {
 	/// <summary>
-	/// Dumps cluster info out suitable for debugging and diagnosing cluster problems.  By default, dumps everything to stdout. You can optionally specify a directory with --output-directory.  If you specify a directory, kubernetes will build a set of files in that directory.  By default only dumps things in the 'kube-system' namespace, but you can switch to a different namespace with the --namespaces flag, or specify --all-namespaces to dump all namespaces.
+	/// Dump cluster information out suitable for debugging and diagnosing cluster problems.  By default, dumps everything to stdout. You can optionally specify a directory with --output-directory.  If you specify a directory, Kubernetes will build a set of files in that directory.  By default, only dumps things in the current namespace and 'kube-system' namespace, but you can switch to a different namespace with the --namespaces flag, or specify --all-namespaces to dump all namespaces.
 	///
 	/// 
-	///  The command also dumps the logs of all of the pods in the cluster, these logs are dumped into different directories based on namespace and pod name.
+	///  The command also dumps the logs of all of the pods in the cluster; these logs are dumped into different directories based on namespace and pod name.
 	/// </summary>
 	/// <example>
 	///   # Dump current cluster state to stdout
@@ -41,30 +41,36 @@ namespace Cake.Kubectl
 		///
 		/// A comma separated list of namespaces to dump.
 		/// </summary>
-		public string Namespaces { get; set; }
+		public string? Namespaces { get; set; }
 		/// <summary>
 		/// -o, --output
 		///
-		/// Output format. One of: json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-file.
+		/// Output format. One of: (json, yaml, name, go-template, go-template-file, template, templatefile, jsonpath, jsonpath-as-json, jsonpath-file).
 		/// </summary>
-		public string Output { get; set; }
+		public string? Output { get; set; }
 		/// <summary>
 		/// --output-directory
 		///
 		/// Where to output the files.  If empty or '-' uses stdout, otherwise creates a directory hierarchy in that directory
 		/// </summary>
-		public string OutputDirectory { get; set; }
+		public string? OutputDirectory { get; set; }
 		/// <summary>
 		/// --pod-running-timeout
 		///
 		/// The length of time (like 5s, 2m, or 3h, higher than zero) to wait until at least one pod is running
 		/// </summary>
-		public string PodRunningTimeout { get; set; }
+		public string? PodRunningTimeout { get; set; }
+		/// <summary>
+		/// --show-managed-fields
+		///
+		/// If true, keep the managedFields when printing objects in JSON or YAML format.
+		/// </summary>
+		public bool? ShowManagedFields { get; set; }
 		/// <summary>
 		/// --template
 		///
 		/// Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
 		/// </summary>
-		public string Template { get; set; }
+		public string? Template { get; set; }
 	}
 }

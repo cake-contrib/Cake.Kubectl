@@ -7,8 +7,17 @@ namespace Cake.Kubectl
 	///
 	/// </summary>
 	/// <example>
-	///   # Create a new deployment named my-dep that runs the busybox image.
+	///   # Create a deployment named my-dep that runs the busybox image
 	///   kubectl create deployment my-dep --image=busybox
+	/// 
+	///   # Create a deployment with a command
+	///   kubectl create deployment my-dep --image=busybox -- date
+	/// 
+	///   # Create a deployment named my-dep that runs the nginx image with 3 replicas
+	///   kubectl create deployment my-dep --image=nginx --replicas=3
+	/// 
+	///   # Create a deployment named my-dep that runs the busybox image and expose port 5701
+	///   kubectl create deployment my-dep --image=busybox --port=5701
 	/// </example>
 	[CompilerGenerated]
 	public sealed class KubectlCreateDeploymentSettings : AutoToolSettings
@@ -22,27 +31,39 @@ namespace Cake.Kubectl
 		/// <summary>
 		/// --dry-run
 		///
-		/// If true, only print the object that would be sent, without sending it.
+		/// Must be "none", "server", or "client". If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource.
 		/// </summary>
-		public bool? DryRun { get; set; }
+		public string? DryRun { get; set; }
 		/// <summary>
-		/// --generator
+		/// --field-manager
 		///
-		/// The name of the API generator to use.
+		/// Name of the manager used to track field ownership.
 		/// </summary>
-		public string Generator { get; set; }
+		public string? FieldManager { get; set; }
 		/// <summary>
 		/// --image
 		///
-		/// Image name to run.
+		/// Image names to run.
 		/// </summary>
-		public string Image { get; set; }
+		public string? Image { get; set; }
 		/// <summary>
 		/// -o, --output
 		///
-		/// Output format. One of: json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-file.
+		/// Output format. One of: (json, yaml, name, go-template, go-template-file, template, templatefile, jsonpath, jsonpath-as-json, jsonpath-file).
 		/// </summary>
-		public string Output { get; set; }
+		public string? Output { get; set; }
+		/// <summary>
+		/// --port
+		///
+		/// The port that this container exposes.
+		/// </summary>
+		public int? Port { get; set; }
+		/// <summary>
+		/// -r, --replicas
+		///
+		/// Number of replicas to create. Default is 1.
+		/// </summary>
+		public string? Replicas { get; set; }
 		/// <summary>
 		/// --save-config
 		///
@@ -50,16 +71,22 @@ namespace Cake.Kubectl
 		/// </summary>
 		public bool? SaveConfig { get; set; }
 		/// <summary>
+		/// --show-managed-fields
+		///
+		/// If true, keep the managedFields when printing objects in JSON or YAML format.
+		/// </summary>
+		public bool? ShowManagedFields { get; set; }
+		/// <summary>
 		/// --template
 		///
 		/// Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
 		/// </summary>
-		public string Template { get; set; }
+		public string? Template { get; set; }
 		/// <summary>
 		/// --validate
 		///
-		/// If true, use a schema to validate the input before sending it
+		/// Must be one of: strict (or true), warn, ignore (or false). 		"true" or "strict" will use a schema to validate the input and fail the request if invalid. It will perform server side validation if ServerSideFieldValidation is enabled on the api-server, but will fall back to less reliable client-side validation if not. 		"warn" will warn about unknown or duplicate fields without blocking the request if server-side field validation is enabled on the API server, and behave as "ignore" otherwise. 		"false" or "ignore" will not perform any schema validation, silently dropping any unknown or duplicate fields.
 		/// </summary>
-		public bool? Validate { get; set; }
+		public string? Validate { get; set; }
 	}
 }

@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Create a priorityclass with the specified name, value, globalDefault and description
+		/// Create a priority class with the specified name, value, globalDefault and description.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>
@@ -26,7 +26,7 @@ namespace Cake.Kubectl
 			runner.Run("create priorityclass", settings ?? new KubectlCreatePriorityclassSettings(), arguments);
 		}
 		/// <summary>
-		/// Create a priorityclass with the specified name, value, globalDefault and description
+		/// Create a priority class with the specified name, value, globalDefault and description.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>

@@ -9,12 +9,21 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Output shell completion code for the specified shell (bash or zsh). The shell code must be evaluated to provide interactive completion of kubectl commands.  This can be done by sourcing it from the .bash_profile.
+		/// Output shell completion code for the specified shell (bash, zsh, fish, or powershell). The shell code must be evaluated to provide interactive completion of kubectl commands.  This can be done by sourcing it from the .bash_profile.
 		///
 		/// 
-		///  Detailed instructions on how to do this are available here: https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion
+		///  Detailed instructions on how to do this are available here:
 		/// 
-		///  Note for zsh users: [1] zsh completions are only supported in versions of zsh >= 5.2
+		///   for macOS:
+		///   https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#enable-shell-autocompletion
+		/// 
+		///   for linux:
+		///   https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#enable-shell-autocompletion
+		/// 
+		///   for windows:
+		///   https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/#enable-shell-autocompletion
+		/// 
+		///  Note for zsh users: [1] zsh completions are only supported in versions of zsh &gt;= 5.2.
 		/// </summary>
 		/// <param name="context">The context.</param>
 		/// <param name="settings">The settings.</param>
@@ -30,12 +39,21 @@ namespace Cake.Kubectl
 			runner.Run("completion", settings ?? new KubectlCompletionSettings(), arguments);
 		}
 		/// <summary>
-		/// Output shell completion code for the specified shell (bash or zsh). The shell code must be evaluated to provide interactive completion of kubectl commands.  This can be done by sourcing it from the .bash_profile.
+		/// Output shell completion code for the specified shell (bash, zsh, fish, or powershell). The shell code must be evaluated to provide interactive completion of kubectl commands.  This can be done by sourcing it from the .bash_profile.
 		///
 		/// 
-		///  Detailed instructions on how to do this are available here: https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion
+		///  Detailed instructions on how to do this are available here:
 		/// 
-		///  Note for zsh users: [1] zsh completions are only supported in versions of zsh >= 5.2
+		///   for macOS:
+		///   https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#enable-shell-autocompletion
+		/// 
+		///   for linux:
+		///   https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#enable-shell-autocompletion
+		/// 
+		///   for windows:
+		///   https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/#enable-shell-autocompletion
+		/// 
+		///  Note for zsh users: [1] zsh completions are only supported in versions of zsh &gt;= 5.2.
 		/// </summary>
 		/// <param name="context">The context.</param>
 		/// <param name="settings">The settings.</param>

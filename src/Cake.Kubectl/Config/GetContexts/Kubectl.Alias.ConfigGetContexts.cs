@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Displays one or many contexts from the kubeconfig file.
+		/// Display one or many contexts from the kubeconfig file.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>
@@ -26,7 +26,7 @@ namespace Cake.Kubectl
 			runner.Run("config get-contexts", settings ?? new KubectlConfigGetContextsSettings(), arguments);
 		}
 		/// <summary>
-		/// Displays one or many contexts from the kubeconfig file.
+		/// Display one or many contexts from the kubeconfig file.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>

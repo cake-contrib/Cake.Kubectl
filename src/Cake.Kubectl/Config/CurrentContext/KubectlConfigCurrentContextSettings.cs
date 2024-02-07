@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 namespace Cake.Kubectl
 {
 	/// <summary>
-	/// Displays the current-context
+	/// Display the current-context.
 	///
 	/// </summary>
 	/// <example>

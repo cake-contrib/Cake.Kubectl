@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 namespace Cake.Kubectl
 {
 	/// <summary>
-	/// Print the client and server version information for the current context
+	/// Print the client and server version information for the current context.
 	///
 	/// </summary>
 	/// <example>
@@ -16,7 +16,7 @@ namespace Cake.Kubectl
 		/// <summary>
 		/// --client
 		///
-		/// Client version only (no server required).
+		/// If true, shows client version only (no server required).
 		/// </summary>
 		public bool? Client { get; set; }
 		/// <summary>
@@ -24,12 +24,6 @@ namespace Cake.Kubectl
 		///
 		/// One of 'yaml' or 'json'.
 		/// </summary>
-		public string Output { get; set; }
-		/// <summary>
-		/// --short
-		///
-		/// Print just the version number.
-		/// </summary>
-		public bool? Short { get; set; }
+		public string? Output { get; set; }
 	}
 }

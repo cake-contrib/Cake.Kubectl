@@ -9,12 +9,12 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// List the fields for supported resources
+		/// List the fields for supported resources.
 		///
 		/// 
 		///  This command describes the fields associated with each supported API resource. Fields are identified via a simple JSONPath identifier:
 		/// 
-		///   <type>.<fieldName>[.<fieldName>]
+		///   &lt;type&gt;.&lt;fieldName&gt;[.&lt;fieldName&gt;]
 		/// 
 		///  Add the --recursive flag to display all of the fields at once without descriptions. Information about each field is retrieved from the server in OpenAPI format.
 		/// </summary>
@@ -32,12 +32,12 @@ namespace Cake.Kubectl
 			runner.Run("explain", settings ?? new KubectlExplainSettings(), arguments);
 		}
 		/// <summary>
-		/// List the fields for supported resources
+		/// List the fields for supported resources.
 		///
 		/// 
 		///  This command describes the fields associated with each supported API resource. Fields are identified via a simple JSONPath identifier:
 		/// 
-		///   <type>.<fieldName>[.<fieldName>]
+		///   &lt;type&gt;.&lt;fieldName&gt;[.&lt;fieldName&gt;]
 		/// 
 		///  Add the --recursive flag to display all of the fields at once without descriptions. Information about each field is retrieved from the server in OpenAPI format.
 		/// </summary>

@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Create a RoleBinding for a particular Role or ClusterRole.
+		/// Create a role binding for a particular role or cluster role.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>
@@ -26,7 +26,7 @@ namespace Cake.Kubectl
 			runner.Run("create rolebinding", settings ?? new KubectlCreateRolebindingSettings(), arguments);
 		}
 		/// <summary>
-		/// Create a RoleBinding for a particular Role or ClusterRole.
+		/// Create a role binding for a particular role or cluster role.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>

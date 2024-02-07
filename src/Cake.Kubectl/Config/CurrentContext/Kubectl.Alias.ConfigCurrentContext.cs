@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Displays the current-context
+		/// Display the current-context.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>
@@ -26,7 +26,7 @@ namespace Cake.Kubectl
 			runner.Run("config current-context", settings ?? new KubectlConfigCurrentContextSettings(), arguments);
 		}
 		/// <summary>
-		/// Displays the current-context
+		/// Display the current-context.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>

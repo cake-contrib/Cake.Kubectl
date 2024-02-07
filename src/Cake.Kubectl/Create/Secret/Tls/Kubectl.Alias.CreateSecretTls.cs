@@ -12,7 +12,7 @@ namespace Cake.Kubectl
 		/// Create a TLS secret from the given public/private key pair.
 		///
 		/// 
-		///  The public/private key pair must exist before hand. The public key certificate must be .PEM encoded and match the given private key.
+		///  The public/private key pair must exist beforehand. The public key certificate must be .PEM encoded and match the given private key.
 		/// </summary>
 		/// <param name="context">The context.</param>
 		/// <param name="settings">The settings.</param>
@@ -31,7 +31,7 @@ namespace Cake.Kubectl
 		/// Create a TLS secret from the given public/private key pair.
 		///
 		/// 
-		///  The public/private key pair must exist before hand. The public key certificate must be .PEM encoded and match the given private key.
+		///  The public/private key pair must exist beforehand. The public key certificate must be .PEM encoded and match the given private key.
 		/// </summary>
 		/// <param name="context">The context.</param>
 		/// <param name="settings">The settings.</param>

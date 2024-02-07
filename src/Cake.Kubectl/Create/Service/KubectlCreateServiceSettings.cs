@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 namespace Cake.Kubectl
 {
 	/// <summary>
-	/// Create a service using specified subcommand.
+	/// Create a service using a specified subcommand.
 	///
 	/// </summary>
 	[CompilerGenerated]

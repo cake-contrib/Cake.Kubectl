@@ -6,10 +6,10 @@ namespace Cake.Kubectl
 	/// View the latest last-applied-configuration annotations by type/name or file.
 	///
 	/// 
-	///  The default output will be printed to stdout in YAML format. One can use -o option to change output format.
+	///  The default output will be printed to stdout in YAML format. You can use the -o option to change the output format.
 	/// </summary>
 	/// <example>
-	///   # View the last-applied-configuration annotations by type/name in YAML.
+	///   # View the last-applied-configuration annotations by type/name in YAML
 	///   kubectl apply view-last-applied deployment/nginx
 	/// 
 	///   # View the last-applied-configuration annotations by file in JSON
@@ -29,19 +29,19 @@ namespace Cake.Kubectl
 		///
 		/// Filename, directory, or URL to files that contains the last-applied-configuration annotations
 		/// </summary>
-		public string Filename { get; set; }
+		public string? Filename { get; set; }
 		/// <summary>
 		/// -k, --kustomize
 		///
 		/// Process the kustomization directory. This flag can't be used together with -f or -R.
 		/// </summary>
-		public string Kustomize { get; set; }
+		public string? Kustomize { get; set; }
 		/// <summary>
 		/// -o, --output
 		///
-		/// Output format. Must be one of yaml|json
+		/// Output format. Must be one of (yaml, json)
 		/// </summary>
-		public string Output { get; set; }
+		public string? Output { get; set; }
 		/// <summary>
 		/// -R, --recursive
 		///
@@ -51,8 +51,8 @@ namespace Cake.Kubectl
 		/// <summary>
 		/// -l, --selector
 		///
-		/// Selector (label query) to filter on, supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2)
+		/// Selector (label query) to filter on, supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2). Matching objects must satisfy all of the specified label constraints.
 		/// </summary>
-		public string Selector { get; set; }
+		public string? Selector { get; set; }
 	}
 }

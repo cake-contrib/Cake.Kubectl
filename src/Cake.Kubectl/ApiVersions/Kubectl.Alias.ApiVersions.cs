@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Print the supported API versions on the server, in the form of "group/version"
+		/// Print the supported API versions on the server, in the form of "group/version".
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>
@@ -26,7 +26,7 @@ namespace Cake.Kubectl
 			runner.Run("api-versions", settings ?? new KubectlApiVersionsSettings(), arguments);
 		}
 		/// <summary>
-		/// Print the supported API versions on the server, in the form of "group/version"
+		/// Print the supported API versions on the server, in the form of "group/version".
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>

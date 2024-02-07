@@ -9,10 +9,10 @@ namespace Cake.Kubectl
 	///  You can use --output jsonpath={...} to extract specific values using a jsonpath expression.
 	/// </summary>
 	/// <example>
-	///   # Show merged kubeconfig settings.
+	///   # Show merged kubeconfig settings
 	///   kubectl config view
 	/// 
-	///   # Show merged kubeconfig settings and raw certificate data.
+	///   # Show merged kubeconfig settings and raw certificate data and exposed secrets
 	///   kubectl config view --raw
 	/// 
 	///   # Get the password for the e2e user
@@ -48,20 +48,26 @@ namespace Cake.Kubectl
 		/// <summary>
 		/// -o, --output
 		///
-		/// Output format. One of: json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-file.
+		/// Output format. One of: (json, yaml, name, go-template, go-template-file, template, templatefile, jsonpath, jsonpath-as-json, jsonpath-file).
 		/// </summary>
-		public string Output { get; set; }
+		public string? Output { get; set; }
 		/// <summary>
 		/// --raw
 		///
-		/// Display raw byte data
+		/// Display raw byte data and sensitive data
 		/// </summary>
 		public bool? Raw { get; set; }
+		/// <summary>
+		/// --show-managed-fields
+		///
+		/// If true, keep the managedFields when printing objects in JSON or YAML format.
+		/// </summary>
+		public bool? ShowManagedFields { get; set; }
 		/// <summary>
 		/// --template
 		///
 		/// Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
 		/// </summary>
-		public string Template { get; set; }
+		public string? Template { get; set; }
 	}
 }

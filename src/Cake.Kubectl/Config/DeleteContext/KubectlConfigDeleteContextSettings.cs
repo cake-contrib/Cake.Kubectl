@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 namespace Cake.Kubectl
 {
 	/// <summary>
-	/// Delete the specified context from the kubeconfig
+	/// Delete the specified context from the kubeconfig.
 	///
 	/// </summary>
 	/// <example>

@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Create a pod disruption budget with the specified name, selector, and desired minimum available pods
+		/// Create a pod disruption budget with the specified name, selector, and desired minimum available pods.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>
@@ -26,7 +26,7 @@ namespace Cake.Kubectl
 			runner.Run("create poddisruptionbudget", settings ?? new KubectlCreatePoddisruptionbudgetSettings(), arguments);
 		}
 		/// <summary>
-		/// Create a pod disruption budget with the specified name, selector, and desired minimum available pods
+		/// Create a pod disruption budget with the specified name, selector, and desired minimum available pods.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>

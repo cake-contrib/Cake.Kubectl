@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 namespace Cake.Kubectl
 {
 	/// <summary>
-	/// Reconciles rules for RBAC Role, RoleBinding, ClusterRole, and ClusterRole binding objects.
+	/// Reconciles rules for RBAC role, role binding, cluster role, and cluster role binding objects.
 	///
 	/// 
 	///  Missing objects are created, and the containing namespace is created for namespaced objects, if required.
@@ -15,7 +15,7 @@ namespace Cake.Kubectl
 	///  This is preferred to 'apply' for RBAC resources so that semantically-aware merging of rules and subjects is done.
 	/// </summary>
 	/// <example>
-	///   # Reconcile rbac resources from a file
+	///   # Reconcile RBAC resources from a file
 	///   kubectl auth reconcile -f my-rbac-rules.yaml
 	/// </example>
 	[CompilerGenerated]
@@ -30,27 +30,27 @@ namespace Cake.Kubectl
 		/// <summary>
 		/// --dry-run
 		///
-		/// If true, display results but do not submit changes
+		/// Must be "none", "server", or "client". If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource.
 		/// </summary>
-		public bool? DryRun { get; set; }
+		public string? DryRun { get; set; }
 		/// <summary>
 		/// -f, --filename
 		///
 		/// Filename, directory, or URL to files identifying the resource to reconcile.
 		/// </summary>
-		public string Filename { get; set; }
+		public string? Filename { get; set; }
 		/// <summary>
 		/// -k, --kustomize
 		///
 		/// Process the kustomization directory. This flag can't be used together with -f or -R.
 		/// </summary>
-		public string Kustomize { get; set; }
+		public string? Kustomize { get; set; }
 		/// <summary>
 		/// -o, --output
 		///
-		/// Output format. One of: json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-file.
+		/// Output format. One of: (json, yaml, name, go-template, go-template-file, template, templatefile, jsonpath, jsonpath-as-json, jsonpath-file).
 		/// </summary>
-		public string Output { get; set; }
+		public string? Output { get; set; }
 		/// <summary>
 		/// -R, --recursive
 		///
@@ -70,10 +70,16 @@ namespace Cake.Kubectl
 		/// </summary>
 		public bool? RemoveExtraSubjects { get; set; }
 		/// <summary>
+		/// --show-managed-fields
+		///
+		/// If true, keep the managedFields when printing objects in JSON or YAML format.
+		/// </summary>
+		public bool? ShowManagedFields { get; set; }
+		/// <summary>
 		/// --template
 		///
 		/// Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
 		/// </summary>
-		public string Template { get; set; }
+		public string? Template { get; set; }
 	}
 }

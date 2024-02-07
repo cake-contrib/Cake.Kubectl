@@ -9,14 +9,14 @@ namespace Cake.Kubectl
 	///  JSON and YAML formats are accepted.
 	/// </summary>
 	/// <example>
-	///   # Create a pod using the data in pod.json.
+	///   # Create a pod using the data in pod.json
 	///   kubectl create -f ./pod.json
 	/// 
-	///   # Create a pod based on the JSON passed into stdin.
+	///   # Create a pod based on the JSON passed into stdin
 	///   cat pod.json | kubectl create -f -
 	/// 
-	///   # Edit the data in docker-registry.yaml in JSON then create the resource using the edited data.
-	///   kubectl create -f docker-registry.yaml --edit -o json
+	///   # Edit the data in registry.yaml in JSON then create the resource using the edited data
+	///   kubectl create -f registry.yaml --edit -o json
 	/// </example>
 	[CompilerGenerated]
 	public sealed class KubectlCreateSettings : AutoToolSettings
@@ -30,9 +30,9 @@ namespace Cake.Kubectl
 		/// <summary>
 		/// --dry-run
 		///
-		/// If true, only print the object that would be sent, without sending it.
+		/// Must be "none", "server", or "client". If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource.
 		/// </summary>
-		public bool? DryRun { get; set; }
+		public string? DryRun { get; set; }
 		/// <summary>
 		/// --edit
 		///
@@ -40,35 +40,35 @@ namespace Cake.Kubectl
 		/// </summary>
 		public bool? Edit { get; set; }
 		/// <summary>
+		/// --field-manager
+		///
+		/// Name of the manager used to track field ownership.
+		/// </summary>
+		public string? FieldManager { get; set; }
+		/// <summary>
 		/// -f, --filename
 		///
 		/// Filename, directory, or URL to files to use to create the resource
 		/// </summary>
-		public string Filename { get; set; }
+		public string? Filename { get; set; }
 		/// <summary>
 		/// -k, --kustomize
 		///
 		/// Process the kustomization directory. This flag can't be used together with -f or -R.
 		/// </summary>
-		public string Kustomize { get; set; }
+		public string? Kustomize { get; set; }
 		/// <summary>
 		/// -o, --output
 		///
-		/// Output format. One of: json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-file.
+		/// Output format. One of: (json, yaml, name, go-template, go-template-file, template, templatefile, jsonpath, jsonpath-as-json, jsonpath-file).
 		/// </summary>
-		public string Output { get; set; }
+		public string? Output { get; set; }
 		/// <summary>
 		/// --raw
 		///
 		/// Raw URI to POST to the server.  Uses the transport specified by the kubeconfig file.
 		/// </summary>
-		public string Raw { get; set; }
-		/// <summary>
-		/// --record
-		///
-		/// Record current kubectl command in the resource annotation. If set to false, do not record the command. If set to true, record the command. If not set, default to updating the existing annotation value only if one already exists.
-		/// </summary>
-		public bool? Record { get; set; }
+		public string? Raw { get; set; }
 		/// <summary>
 		/// -R, --recursive
 		///
@@ -84,21 +84,27 @@ namespace Cake.Kubectl
 		/// <summary>
 		/// -l, --selector
 		///
-		/// Selector (label query) to filter on, supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2)
+		/// Selector (label query) to filter on, supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2). Matching objects must satisfy all of the specified label constraints.
 		/// </summary>
-		public string Selector { get; set; }
+		public string? Selector { get; set; }
+		/// <summary>
+		/// --show-managed-fields
+		///
+		/// If true, keep the managedFields when printing objects in JSON or YAML format.
+		/// </summary>
+		public bool? ShowManagedFields { get; set; }
 		/// <summary>
 		/// --template
 		///
 		/// Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
 		/// </summary>
-		public string Template { get; set; }
+		public string? Template { get; set; }
 		/// <summary>
 		/// --validate
 		///
-		/// If true, use a schema to validate the input before sending it
+		/// Must be one of: strict (or true), warn, ignore (or false). 		"true" or "strict" will use a schema to validate the input and fail the request if invalid. It will perform server side validation if ServerSideFieldValidation is enabled on the api-server, but will fall back to less reliable client-side validation if not. 		"warn" will warn about unknown or duplicate fields without blocking the request if server-side field validation is enabled on the API server, and behave as "ignore" otherwise. 		"false" or "ignore" will not perform any schema validation, silently dropping any unknown or duplicate fields.
 		/// </summary>
-		public bool? Validate { get; set; }
+		public string? Validate { get; set; }
 		/// <summary>
 		/// --windows-line-endings
 		///

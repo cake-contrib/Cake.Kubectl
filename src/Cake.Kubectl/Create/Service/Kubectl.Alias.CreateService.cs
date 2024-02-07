@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Create a service using specified subcommand.
+		/// Create a service using a specified subcommand.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>
@@ -26,7 +26,7 @@ namespace Cake.Kubectl
 			runner.Run("create service", settings ?? new KubectlCreateServiceSettings(), arguments);
 		}
 		/// <summary>
-		/// Create a service using specified subcommand.
+		/// Create a service using a specified subcommand.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>

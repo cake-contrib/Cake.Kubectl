@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Unsets an individual value in a kubeconfig file
+		/// Unset an individual value in a kubeconfig file.
 		///
 		/// 
 		///  PROPERTY_NAME is a dot delimited name where each token represents either an attribute name or a map key.  Map keys may not contain dots.
@@ -28,7 +28,7 @@ namespace Cake.Kubectl
 			runner.Run("config unset", settings ?? new KubectlConfigUnsetSettings(), arguments);
 		}
 		/// <summary>
-		/// Unsets an individual value in a kubeconfig file
+		/// Unset an individual value in a kubeconfig file.
 		///
 		/// 
 		///  PROPERTY_NAME is a dot delimited name where each token represents either an attribute name or a map key.  Map keys may not contain dots.

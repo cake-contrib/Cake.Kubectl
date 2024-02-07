@@ -9,10 +9,12 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Update field(s) of a resource using strategic merge patch, a JSON merge patch, or a JSON patch.
+		/// Update fields of a resource using strategic merge patch, a JSON merge patch, or a JSON patch.
 		///
 		/// 
 		///  JSON and YAML formats are accepted.
+		/// 
+		///  Note: Strategic merge patch is not supported for custom resources.
 		/// </summary>
 		/// <param name="context">The context.</param>
 		/// <param name="settings">The settings.</param>
@@ -28,10 +30,12 @@ namespace Cake.Kubectl
 			runner.Run("patch", settings ?? new KubectlPatchSettings(), arguments);
 		}
 		/// <summary>
-		/// Update field(s) of a resource using strategic merge patch, a JSON merge patch, or a JSON patch.
+		/// Update fields of a resource using strategic merge patch, a JSON merge patch, or a JSON patch.
 		///
 		/// 
 		///  JSON and YAML formats are accepted.
+		/// 
+		///  Note: Strategic merge patch is not supported for custom resources.
 		/// </summary>
 		/// <param name="context">The context.</param>
 		/// <param name="settings">The settings.</param>

@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 namespace Cake.Kubectl
 {
 	/// <summary>
-	/// Delete the specified cluster from the kubeconfig
+	/// Delete the specified cluster from the kubeconfig.
 	///
 	/// </summary>
 	/// <example>

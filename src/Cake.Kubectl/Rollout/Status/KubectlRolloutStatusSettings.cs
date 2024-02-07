@@ -20,13 +20,13 @@ namespace Cake.Kubectl
 		///
 		/// Filename, directory, or URL to files identifying the resource to get from a server.
 		/// </summary>
-		public string Filename { get; set; }
+		public string? Filename { get; set; }
 		/// <summary>
 		/// -k, --kustomize
 		///
 		/// Process the kustomization directory. This flag can't be used together with -f or -R.
 		/// </summary>
-		public string Kustomize { get; set; }
+		public string? Kustomize { get; set; }
 		/// <summary>
 		/// -R, --recursive
 		///
@@ -38,13 +38,19 @@ namespace Cake.Kubectl
 		///
 		/// Pin to a specific revision for showing its status. Defaults to 0 (last revision).
 		/// </summary>
-		public string Revision { get; set; }
+		public string? Revision { get; set; }
+		/// <summary>
+		/// -l, --selector
+		///
+		/// Selector (label query) to filter on, supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2). Matching objects must satisfy all of the specified label constraints.
+		/// </summary>
+		public string? Selector { get; set; }
 		/// <summary>
 		/// --timeout
 		///
 		/// The length of time to wait before ending watch, zero means never. Any other values should contain a corresponding time unit (e.g. 1s, 2m, 3h).
 		/// </summary>
-		public string Timeout { get; set; }
+		public string? Timeout { get; set; }
 		/// <summary>
 		/// -w, --watch
 		///

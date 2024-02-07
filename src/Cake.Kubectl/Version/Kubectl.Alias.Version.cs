@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Print the client and server version information for the current context
+		/// Print the client and server version information for the current context.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>
@@ -26,7 +26,7 @@ namespace Cake.Kubectl
 			runner.Run("version", settings ?? new KubectlVersionSettings(), arguments);
 		}
 		/// <summary>
-		/// Print the client and server version information for the current context
+		/// Print the client and server version information for the current context.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>

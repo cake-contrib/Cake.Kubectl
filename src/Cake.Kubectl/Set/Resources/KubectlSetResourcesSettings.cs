@@ -3,10 +3,10 @@ using System.Runtime.CompilerServices;
 namespace Cake.Kubectl
 {
 	/// <summary>
-	/// Specify compute resource requirements (cpu, memory) for any resource that defines a pod template.  If a pod is successfully scheduled, it is guaranteed the amount of resource requested, but may burst up to its specified limits.
+	/// Specify compute resource requirements (CPU, memory) for any resource that defines a pod template.  If a pod is successfully scheduled, it is guaranteed the amount of resource requested, but may burst up to its specified limits.
 	///
 	/// 
-	///  for each compute resource, if a limit is specified and a request is omitted, the request will default to the limit.
+	///  For each compute resource, if a limit is specified and a request is omitted, the request will default to the limit.
 	/// 
 	///  Possible resources include (case insensitive): Use "kubectl api-resources" for a complete list of supported resources..
 	/// </summary>
@@ -29,7 +29,7 @@ namespace Cake.Kubectl
 		/// <summary>
 		/// --all
 		///
-		/// Select all resources, including uninitialized ones, in the namespace of the specified resource types
+		/// Select all resources, in the namespace of the specified resource types
 		/// </summary>
 		public bool? All { get; set; }
 		/// <summary>
@@ -43,31 +43,37 @@ namespace Cake.Kubectl
 		///
 		/// The names of containers in the selected pod templates to change, all containers are selected by default - may use wildcards
 		/// </summary>
-		public string Containers { get; set; }
+		public string? Containers { get; set; }
 		/// <summary>
 		/// --dry-run
 		///
-		/// If true, only print the object that would be sent, without sending it.
+		/// Must be "none", "server", or "client". If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource.
 		/// </summary>
-		public bool? DryRun { get; set; }
+		public string? DryRun { get; set; }
+		/// <summary>
+		/// --field-manager
+		///
+		/// Name of the manager used to track field ownership.
+		/// </summary>
+		public string? FieldManager { get; set; }
 		/// <summary>
 		/// -f, --filename
 		///
 		/// Filename, directory, or URL to files identifying the resource to get from a server.
 		/// </summary>
-		public string Filename { get; set; }
+		public string? Filename { get; set; }
 		/// <summary>
 		/// -k, --kustomize
 		///
 		/// Process the kustomization directory. This flag can't be used together with -f or -R.
 		/// </summary>
-		public string Kustomize { get; set; }
+		public string? Kustomize { get; set; }
 		/// <summary>
 		/// --limits
 		///
 		/// The resource requirement requests for this container.  For example, 'cpu=100m,memory=256Mi'.  Note that server side components may assign requests depending on the server configuration, such as limit ranges.
 		/// </summary>
-		public string Limits { get; set; }
+		public string? Limits { get; set; }
 		/// <summary>
 		/// --local
 		///
@@ -77,15 +83,9 @@ namespace Cake.Kubectl
 		/// <summary>
 		/// -o, --output
 		///
-		/// Output format. One of: json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-file.
+		/// Output format. One of: (json, yaml, name, go-template, go-template-file, template, templatefile, jsonpath, jsonpath-as-json, jsonpath-file).
 		/// </summary>
-		public string Output { get; set; }
-		/// <summary>
-		/// --record
-		///
-		/// Record current kubectl command in the resource annotation. If set to false, do not record the command. If set to true, record the command. If not set, default to updating the existing annotation value only if one already exists.
-		/// </summary>
-		public bool? Record { get; set; }
+		public string? Output { get; set; }
 		/// <summary>
 		/// -R, --recursive
 		///
@@ -97,18 +97,24 @@ namespace Cake.Kubectl
 		///
 		/// The resource requirement requests for this container.  For example, 'cpu=100m,memory=256Mi'.  Note that server side components may assign requests depending on the server configuration, such as limit ranges.
 		/// </summary>
-		public string Requests { get; set; }
+		public string? Requests { get; set; }
 		/// <summary>
 		/// -l, --selector
 		///
-		/// Selector (label query) to filter on, not including uninitialized ones,supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2)
+		/// Selector (label query) to filter on, supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2). Matching objects must satisfy all of the specified label constraints.
 		/// </summary>
-		public string Selector { get; set; }
+		public string? Selector { get; set; }
+		/// <summary>
+		/// --show-managed-fields
+		///
+		/// If true, keep the managedFields when printing objects in JSON or YAML format.
+		/// </summary>
+		public bool? ShowManagedFields { get; set; }
 		/// <summary>
 		/// --template
 		///
 		/// Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
 		/// </summary>
-		public string Template { get; set; }
+		public string? Template { get; set; }
 	}
 }

@@ -9,12 +9,18 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Diff configurations specified by filename or stdin between the current online configuration, and the configuration as it would be if applied.
+		/// Diff configurations specified by file name or stdin between the current online configuration, and the configuration as it would be if applied.
 		///
 		/// 
-		///  Output is always YAML.
+		///  The output is always YAML.
 		/// 
-		///  KUBECTL_EXTERNAL_DIFF environment variable can be used to select your own diff command. By default, the "diff" command available in your path will be run with "-u" (unicode) and "-N" (treat new files as empty) options.
+		///  KUBECTL_EXTERNAL_DIFF environment variable can be used to select your own diff command. Users can use external commands with params too, example: KUBECTL_EXTERNAL_DIFF="colordiff -N -u"
+		/// 
+		///  By default, the "diff" command available in your path will be run with the "-u" (unified diff) and "-N" (treat absent files as empty) options.
+		/// 
+		///  Exit status: 0 No differences were found. 1 Differences were found. &gt;1 Kubectl or diff failed with an error.
+		/// 
+		///  Note: KUBECTL_EXTERNAL_DIFF, if used, is expected to follow that convention.
 		/// </summary>
 		/// <param name="context">The context.</param>
 		/// <param name="settings">The settings.</param>
@@ -30,12 +36,18 @@ namespace Cake.Kubectl
 			runner.Run("diff", settings ?? new KubectlDiffSettings(), arguments);
 		}
 		/// <summary>
-		/// Diff configurations specified by filename or stdin between the current online configuration, and the configuration as it would be if applied.
+		/// Diff configurations specified by file name or stdin between the current online configuration, and the configuration as it would be if applied.
 		///
 		/// 
-		///  Output is always YAML.
+		///  The output is always YAML.
 		/// 
-		///  KUBECTL_EXTERNAL_DIFF environment variable can be used to select your own diff command. By default, the "diff" command available in your path will be run with "-u" (unicode) and "-N" (treat new files as empty) options.
+		///  KUBECTL_EXTERNAL_DIFF environment variable can be used to select your own diff command. Users can use external commands with params too, example: KUBECTL_EXTERNAL_DIFF="colordiff -N -u"
+		/// 
+		///  By default, the "diff" command available in your path will be run with the "-u" (unified diff) and "-N" (treat absent files as empty) options.
+		/// 
+		///  Exit status: 0 No differences were found. 1 Differences were found. &gt;1 Kubectl or diff failed with an error.
+		/// 
+		///  Note: KUBECTL_EXTERNAL_DIFF, if used, is expected to follow that convention.
 		/// </summary>
 		/// <param name="context">The context.</param>
 		/// <param name="settings">The settings.</param>

@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Update User, Group or ServiceAccount in a RoleBinding/ClusterRoleBinding.
+		/// Update the user, group, or service account in a role binding or cluster role binding.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>
@@ -26,7 +26,7 @@ namespace Cake.Kubectl
 			runner.Run("set subject", settings ?? new KubectlSetSubjectSettings(), arguments);
 		}
 		/// <summary>
-		/// Update User, Group or ServiceAccount in a RoleBinding/ClusterRoleBinding.
+		/// Update the user, group, or service account in a role binding or cluster role binding.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>

@@ -1,7 +1,4 @@
-﻿using NUnit.Framework;
-using System.IO;
-
-namespace Cake.Kubectl.Tests.Create
+﻿namespace Cake.Kubectl.Tests.Create
 {
     [TestFixture]
     public class Kubectl
@@ -11,7 +8,7 @@ namespace Cake.Kubectl.Tests.Create
         {
             var fixture = new KubectlCreateFixture
             {
-                Settings = new KubectlCreateSettings { Filename = Path.Combine("C:", "temp", "file.yml") }
+                Settings = new KubectlCreateSettings { Filename = System.IO.Path.Combine("C:", "temp", "file.yml") }
             };
 
             var actual = fixture.Run();

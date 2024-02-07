@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Sets a user entry in kubeconfig
+		/// Set a user entry in kubeconfig.
 		///
 		/// 
 		///  Specifying a name that already exists will merge new fields on top of existing values.
@@ -18,10 +18,10 @@ namespace Cake.Kubectl
 		///   --client-certificate=certfile --client-key=keyfile
 		/// 
 		///   Bearer token flags:
-		///     --token=bearer_token
+		///   --token=bearer_token
 		/// 
 		///   Basic auth flags:
-		///     --username=basic_user --password=basic_password
+		///   --username=basic_user --password=basic_password
 		/// 
 		///  Bearer token and basic auth are mutually exclusive.
 		/// </summary>
@@ -39,7 +39,7 @@ namespace Cake.Kubectl
 			runner.Run("config set-credentials", settings ?? new KubectlConfigSetCredentialsSettings(), arguments);
 		}
 		/// <summary>
-		/// Sets a user entry in kubeconfig
+		/// Set a user entry in kubeconfig.
 		///
 		/// 
 		///  Specifying a name that already exists will merge new fields on top of existing values.
@@ -48,10 +48,10 @@ namespace Cake.Kubectl
 		///   --client-certificate=certfile --client-key=keyfile
 		/// 
 		///   Bearer token flags:
-		///     --token=bearer_token
+		///   --token=bearer_token
 		/// 
 		///   Basic auth flags:
-		///     --username=basic_user --password=basic_password
+		///   --username=basic_user --password=basic_password
 		/// 
 		///  Bearer token and basic auth are mutually exclusive.
 		/// </summary>

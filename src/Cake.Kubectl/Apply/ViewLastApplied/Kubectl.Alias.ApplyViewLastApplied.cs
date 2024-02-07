@@ -12,7 +12,7 @@ namespace Cake.Kubectl
 		/// View the latest last-applied-configuration annotations by type/name or file.
 		///
 		/// 
-		///  The default output will be printed to stdout in YAML format. One can use -o option to change output format.
+		///  The default output will be printed to stdout in YAML format. You can use the -o option to change the output format.
 		/// </summary>
 		/// <param name="context">The context.</param>
 		/// <param name="settings">The settings.</param>
@@ -31,7 +31,7 @@ namespace Cake.Kubectl
 		/// View the latest last-applied-configuration annotations by type/name or file.
 		///
 		/// 
-		///  The default output will be printed to stdout in YAML format. One can use -o option to change output format.
+		///  The default output will be printed to stdout in YAML format. You can use the -o option to change the output format.
 		/// </summary>
 		/// <param name="context">The context.</param>
 		/// <param name="settings">The settings.</param>

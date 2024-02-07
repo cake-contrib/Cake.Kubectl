@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Update ServiceAccount of pod template resources.
+		/// Update the service account of pod template resources.
 		///
 		/// 
 		///  Possible resources (case insensitive) can be:
@@ -30,7 +30,7 @@ namespace Cake.Kubectl
 			runner.Run("set serviceaccount", settings ?? new KubectlSetServiceaccountSettings(), arguments);
 		}
 		/// <summary>
-		/// Update ServiceAccount of pod template resources.
+		/// Update the service account of pod template resources.
 		///
 		/// 
 		///  Possible resources (case insensitive) can be:

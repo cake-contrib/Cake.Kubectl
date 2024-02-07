@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Print the supported API resources on the server
+		/// Print the supported API resources on the server.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>
@@ -26,7 +26,7 @@ namespace Cake.Kubectl
 			runner.Run("api-resources", settings ?? new KubectlApiResourcesSettings(), arguments);
 		}
 		/// <summary>
-		/// Print the supported API resources on the server
+		/// Print the supported API resources on the server.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>

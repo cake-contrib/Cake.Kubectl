@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Replace a resource by filename or stdin.
+		/// Replace a resource by file name or stdin.
 		///
 		/// 
 		///  JSON and YAML formats are accepted. If replacing an existing resource, the complete resource spec must be provided. This can be obtained by
@@ -30,7 +30,7 @@ namespace Cake.Kubectl
 			runner.Run("replace", settings ?? new KubectlReplaceSettings(), arguments);
 		}
 		/// <summary>
-		/// Replace a resource by filename or stdin.
+		/// Replace a resource by file name or stdin.
 		///
 		/// 
 		///  JSON and YAML formats are accepted. If replacing an existing resource, the complete resource spec must be provided. This can be obtained by

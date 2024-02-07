@@ -6,16 +6,16 @@ namespace Cake.Kubectl
 	/// Update the labels on a resource.
 	///
 	/// 
-	///   *  A label key and value must begin with a letter or number, and may contain letters, numbers, hyphens, dots, and underscores, up to  63 characters each.
-	///   *  Optionally, the key can begin with a DNS subdomain prefix and a single '/', like example.com/my-app
+	///   *  A label key and value must begin with a letter or number, and may contain letters, numbers, hyphens, dots, and underscores, up to 63 characters each.
+	///   *  Optionally, the key can begin with a DNS subdomain prefix and a single '/', like example.com/my-app.
 	///   *  If --overwrite is true, then existing labels can be overwritten, otherwise attempting to overwrite a label will result in an error.
 	///   *  If --resource-version is specified, then updates will use this resource version, otherwise the existing resource-version will be used.
 	/// </summary>
 	/// <example>
-	///   # Update pod 'foo' with the label 'unhealthy' and the value 'true'.
+	///   # Update pod 'foo' with the label 'unhealthy' and the value 'true'
 	///   kubectl label pods foo unhealthy=true
 	/// 
-	///   # Update pod 'foo' with the label 'status' and the value 'unhealthy', overwriting any existing value.
+	///   # Update pod 'foo' with the label 'status' and the value 'unhealthy', overwriting any existing value
 	///   kubectl label --overwrite pods foo status=unhealthy
 	/// 
 	///   # Update all pods in the namespace
@@ -24,11 +24,11 @@ namespace Cake.Kubectl
 	///   # Update a pod identified by the type and name in "pod.json"
 	///   kubectl label -f pod.json status=unhealthy
 	/// 
-	///   # Update pod 'foo' only if the resource is unchanged from version 1.
+	///   # Update pod 'foo' only if the resource is unchanged from version 1
 	///   kubectl label pods foo status=unhealthy --resource-version=1
 	/// 
-	///   # Update pod 'foo' by removing a label named 'bar' if it exists.
-	///   # Does not require the --overwrite flag.
+	///   # Update pod 'foo' by removing a label named 'bar' if it exists
+	///   # Does not require the --overwrite flag
 	///   kubectl label pods foo bar-
 	/// </example>
 	[CompilerGenerated]
@@ -37,9 +37,15 @@ namespace Cake.Kubectl
 		/// <summary>
 		/// --all
 		///
-		/// Select all resources, including uninitialized ones, in the namespace of the specified resource types
+		/// Select all resources, in the namespace of the specified resource types
 		/// </summary>
 		public bool? All { get; set; }
+		/// <summary>
+		/// -A, --all-namespaces
+		///
+		/// If true, check the specified action in all namespaces.
+		/// </summary>
+		public bool? AllNamespaces { get; set; }
 		/// <summary>
 		/// --allow-missing-template-keys
 		///
@@ -49,27 +55,33 @@ namespace Cake.Kubectl
 		/// <summary>
 		/// --dry-run
 		///
-		/// If true, only print the object that would be sent, without sending it.
+		/// Must be "none", "server", or "client". If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource.
 		/// </summary>
-		public bool? DryRun { get; set; }
+		public string? DryRun { get; set; }
+		/// <summary>
+		/// --field-manager
+		///
+		/// Name of the manager used to track field ownership.
+		/// </summary>
+		public string? FieldManager { get; set; }
 		/// <summary>
 		/// --field-selector
 		///
 		/// Selector (field query) to filter on, supports '=', '==', and '!='.(e.g. --field-selector key1=value1,key2=value2). The server only supports a limited number of field queries per type.
 		/// </summary>
-		public string FieldSelector { get; set; }
+		public string? FieldSelector { get; set; }
 		/// <summary>
 		/// -f, --filename
 		///
 		/// Filename, directory, or URL to files identifying the resource to update the labels
 		/// </summary>
-		public string Filename { get; set; }
+		public string? Filename { get; set; }
 		/// <summary>
 		/// -k, --kustomize
 		///
 		/// Process the kustomization directory. This flag can't be used together with -f or -R.
 		/// </summary>
-		public string Kustomize { get; set; }
+		public string? Kustomize { get; set; }
 		/// <summary>
 		/// --list
 		///
@@ -85,21 +97,15 @@ namespace Cake.Kubectl
 		/// <summary>
 		/// -o, --output
 		///
-		/// Output format. One of: json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-file.
+		/// Output format. One of: (json, yaml, name, go-template, go-template-file, template, templatefile, jsonpath, jsonpath-as-json, jsonpath-file).
 		/// </summary>
-		public string Output { get; set; }
+		public string? Output { get; set; }
 		/// <summary>
 		/// --overwrite
 		///
 		/// If true, allow labels to be overwritten, otherwise reject label updates that overwrite existing labels.
 		/// </summary>
 		public bool? Overwrite { get; set; }
-		/// <summary>
-		/// --record
-		///
-		/// Record current kubectl command in the resource annotation. If set to false, do not record the command. If set to true, record the command. If not set, default to updating the existing annotation value only if one already exists.
-		/// </summary>
-		public bool? Record { get; set; }
 		/// <summary>
 		/// -R, --recursive
 		///
@@ -111,18 +117,24 @@ namespace Cake.Kubectl
 		///
 		/// If non-empty, the labels update will only succeed if this is the current resource-version for the object. Only valid when specifying a single resource.
 		/// </summary>
-		public string ResourceVersion { get; set; }
+		public string? ResourceVersion { get; set; }
 		/// <summary>
 		/// -l, --selector
 		///
-		/// Selector (label query) to filter on, not including uninitialized ones, supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2).
+		/// Selector (label query) to filter on, supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2). Matching objects must satisfy all of the specified label constraints.
 		/// </summary>
-		public string Selector { get; set; }
+		public string? Selector { get; set; }
+		/// <summary>
+		/// --show-managed-fields
+		///
+		/// If true, keep the managedFields when printing objects in JSON or YAML format.
+		/// </summary>
+		public bool? ShowManagedFields { get; set; }
 		/// <summary>
 		/// --template
 		///
 		/// Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
 		/// </summary>
-		public string Template { get; set; }
+		public string? Template { get; set; }
 	}
 }

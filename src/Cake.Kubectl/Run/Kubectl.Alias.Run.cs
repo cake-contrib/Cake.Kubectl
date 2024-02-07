@@ -9,10 +9,8 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Create and run a particular image, possibly replicated.
+		/// Create and run a particular image in a pod.
 		///
-		/// 
-		///  Creates a deployment or job to manage the created container(s).
 		/// </summary>
 		/// <param name="context">The context.</param>
 		/// <param name="settings">The settings.</param>
@@ -28,10 +26,8 @@ namespace Cake.Kubectl
 			runner.Run("run", settings ?? new KubectlRunSettings(), arguments);
 		}
 		/// <summary>
-		/// Create and run a particular image, possibly replicated.
+		/// Create and run a particular image in a pod.
 		///
-		/// 
-		///  Creates a deployment or job to manage the created container(s).
 		/// </summary>
 		/// <param name="context">The context.</param>
 		/// <param name="settings">The settings.</param>

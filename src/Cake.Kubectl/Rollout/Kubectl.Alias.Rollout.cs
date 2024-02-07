@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Manage the rollout of a resource.
+		/// Manage the rollout of one or many resources.
 		///
 		/// 
 		///  Valid resource types include:
@@ -32,7 +32,7 @@ namespace Cake.Kubectl
 			runner.Run("rollout", settings ?? new KubectlRolloutSettings(), arguments);
 		}
 		/// <summary>
-		/// Manage the rollout of a resource.
+		/// Manage the rollout of one or many resources.
 		///
 		/// 
 		///  Valid resource types include:

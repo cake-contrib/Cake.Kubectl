@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Create a cronjob with the specified name.
+		/// Create a cron job with the specified name.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>
@@ -26,7 +26,7 @@ namespace Cake.Kubectl
 			runner.Run("create cronjob", settings ?? new KubectlCreateCronjobSettings(), arguments);
 		}
 		/// <summary>
-		/// Create a cronjob with the specified name.
+		/// Create a cron job with the specified name.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>

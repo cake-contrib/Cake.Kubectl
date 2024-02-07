@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Delete the specified context from the kubeconfig
+		/// Delete the specified context from the kubeconfig.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>
@@ -26,7 +26,7 @@ namespace Cake.Kubectl
 			runner.Run("config delete-context", settings ?? new KubectlConfigDeleteContextSettings(), arguments);
 		}
 		/// <summary>
-		/// Delete the specified context from the kubeconfig
+		/// Delete the specified context from the kubeconfig.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>

@@ -3,14 +3,14 @@ using System.Runtime.CompilerServices;
 namespace Cake.Kubectl
 {
 	/// <summary>
-	/// Displays one or many contexts from the kubeconfig file.
+	/// Display one or many contexts from the kubeconfig file.
 	///
 	/// </summary>
 	/// <example>
 	///   # List all the contexts in your kubeconfig file
 	///   kubectl config get-contexts
 	/// 
-	///   # Describe one context in your kubeconfig file.
+	///   # Describe one context in your kubeconfig file
 	///   kubectl config get-contexts my-context
 	/// </example>
 	[CompilerGenerated]
@@ -25,8 +25,8 @@ namespace Cake.Kubectl
 		/// <summary>
 		/// -o, --output
 		///
-		/// Output format. One of: name
+		/// Output format. One of: (name).
 		/// </summary>
-		public string Output { get; set; }
+		public string? Output { get; set; }
 	}
 }

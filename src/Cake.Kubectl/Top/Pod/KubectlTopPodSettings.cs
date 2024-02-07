@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 namespace Cake.Kubectl
 {
 	/// <summary>
-	/// Display Resource (CPU/Memory/Storage) usage of pods.
+	/// Display resource (CPU/memory) usage of pods.
 	///
 	/// 
 	///  The 'top pod' command allows you to see the resource consumption of pods.
@@ -39,29 +39,11 @@ namespace Cake.Kubectl
 		/// </summary>
 		public bool? Containers { get; set; }
 		/// <summary>
-		/// --heapster-namespace
+		/// --field-selector
 		///
-		/// Namespace Heapster service is located in
+		/// Selector (field query) to filter on, supports '=', '==', and '!='.(e.g. --field-selector key1=value1,key2=value2). The server only supports a limited number of field queries per type.
 		/// </summary>
-		public string HeapsterNamespace { get; set; }
-		/// <summary>
-		/// --heapster-port
-		///
-		/// Port name in service to use
-		/// </summary>
-		public string HeapsterPort { get; set; }
-		/// <summary>
-		/// --heapster-scheme
-		///
-		/// Scheme (http or https) to connect to Heapster as
-		/// </summary>
-		public string HeapsterScheme { get; set; }
-		/// <summary>
-		/// --heapster-service
-		///
-		/// Name of Heapster service
-		/// </summary>
-		public string HeapsterService { get; set; }
+		public string? FieldSelector { get; set; }
 		/// <summary>
 		/// --no-headers
 		///
@@ -71,8 +53,26 @@ namespace Cake.Kubectl
 		/// <summary>
 		/// -l, --selector
 		///
-		/// Selector (label query) to filter on, supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2)
+		/// Selector (label query) to filter on, supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2). Matching objects must satisfy all of the specified label constraints.
 		/// </summary>
-		public string Selector { get; set; }
+		public string? Selector { get; set; }
+		/// <summary>
+		/// --sort-by
+		///
+		/// If non-empty, sort pods list using specified field. The field can be either 'cpu' or 'memory'.
+		/// </summary>
+		public string? SortBy { get; set; }
+		/// <summary>
+		/// --sum
+		///
+		/// Print the sum of the resource usage
+		/// </summary>
+		public bool? Sum { get; set; }
+		/// <summary>
+		/// --use-protocol-buffers
+		///
+		/// Enables using protocol-buffers to access Metrics API.
+		/// </summary>
+		public bool? UseProtocolBuffers { get; set; }
 	}
 }

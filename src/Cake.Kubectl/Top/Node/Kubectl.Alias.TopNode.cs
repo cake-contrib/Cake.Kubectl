@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Display Resource (CPU/Memory/Storage) usage of nodes.
+		/// Display resource (CPU/memory) usage of nodes.
 		///
 		/// 
 		///  The top-node command allows you to see the resource consumption of nodes.
@@ -28,7 +28,7 @@ namespace Cake.Kubectl
 			runner.Run("top node", settings ?? new KubectlTopNodeSettings(), arguments);
 		}
 		/// <summary>
-		/// Display Resource (CPU/Memory/Storage) usage of nodes.
+		/// Display resource (CPU/memory) usage of nodes.
 		///
 		/// 
 		///  The top-node command allows you to see the resource consumption of nodes.

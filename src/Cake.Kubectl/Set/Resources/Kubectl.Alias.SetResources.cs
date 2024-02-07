@@ -9,10 +9,10 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Specify compute resource requirements (cpu, memory) for any resource that defines a pod template.  If a pod is successfully scheduled, it is guaranteed the amount of resource requested, but may burst up to its specified limits.
+		/// Specify compute resource requirements (CPU, memory) for any resource that defines a pod template.  If a pod is successfully scheduled, it is guaranteed the amount of resource requested, but may burst up to its specified limits.
 		///
 		/// 
-		///  for each compute resource, if a limit is specified and a request is omitted, the request will default to the limit.
+		///  For each compute resource, if a limit is specified and a request is omitted, the request will default to the limit.
 		/// 
 		///  Possible resources include (case insensitive): Use "kubectl api-resources" for a complete list of supported resources..
 		/// </summary>
@@ -30,10 +30,10 @@ namespace Cake.Kubectl
 			runner.Run("set resources", settings ?? new KubectlSetResourcesSettings(), arguments);
 		}
 		/// <summary>
-		/// Specify compute resource requirements (cpu, memory) for any resource that defines a pod template.  If a pod is successfully scheduled, it is guaranteed the amount of resource requested, but may burst up to its specified limits.
+		/// Specify compute resource requirements (CPU, memory) for any resource that defines a pod template.  If a pod is successfully scheduled, it is guaranteed the amount of resource requested, but may burst up to its specified limits.
 		///
 		/// 
-		///  for each compute resource, if a limit is specified and a request is omitted, the request will default to the limit.
+		///  For each compute resource, if a limit is specified and a request is omitted, the request will default to the limit.
 		/// 
 		///  Possible resources include (case insensitive): Use "kubectl api-resources" for a complete list of supported resources..
 		/// </summary>

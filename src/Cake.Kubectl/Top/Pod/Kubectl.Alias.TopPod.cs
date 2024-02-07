@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Display Resource (CPU/Memory/Storage) usage of pods.
+		/// Display resource (CPU/memory) usage of pods.
 		///
 		/// 
 		///  The 'top pod' command allows you to see the resource consumption of pods.
@@ -30,7 +30,7 @@ namespace Cake.Kubectl
 			runner.Run("top pod", settings ?? new KubectlTopPodSettings(), arguments);
 		}
 		/// <summary>
-		/// Display Resource (CPU/Memory/Storage) usage of pods.
+		/// Display resource (CPU/memory) usage of pods.
 		///
 		/// 
 		///  The 'top pod' command allows you to see the resource consumption of pods.

@@ -3,16 +3,16 @@ using System.Runtime.CompilerServices;
 namespace Cake.Kubectl
 {
 	/// <summary>
-	/// Creates an autoscaler that automatically chooses and sets the number of pods that run in a kubernetes cluster.
+	/// Creates an autoscaler that automatically chooses and sets the number of pods that run in a Kubernetes cluster.
 	///
 	/// 
-	///  Looks up a Deployment, ReplicaSet, StatefulSet, or ReplicationController by name and creates an autoscaler that uses the given resource as a reference. An autoscaler can automatically increase or decrease number of pods deployed within the system as needed.
+	///  Looks up a deployment, replica set, stateful set, or replication controller by name and creates an autoscaler that uses the given resource as a reference. An autoscaler can automatically increase or decrease number of pods deployed within the system as needed.
 	/// </summary>
 	/// <example>
-	///   # Auto scale a deployment "foo", with the number of pods between 2 and 10, no target CPU utilization specified so a default autoscaling policy will be used:
+	///   # Auto scale a deployment "foo", with the number of pods between 2 and 10, no target CPU utilization specified so a default autoscaling policy will be used
 	///   kubectl autoscale deployment foo --min=2 --max=10
 	/// 
-	///   # Auto scale a replication controller "foo", with the number of pods between 1 and 5, target CPU utilization at 80%:
+	///   # Auto scale a replication controller "foo", with the number of pods between 1 and 5, target CPU utilization at 80%
 	///   kubectl autoscale rc foo --max=5 --cpu-percent=80
 	/// </example>
 	[CompilerGenerated]
@@ -33,27 +33,27 @@ namespace Cake.Kubectl
 		/// <summary>
 		/// --dry-run
 		///
-		/// If true, only print the object that would be sent, without sending it.
+		/// Must be "none", "server", or "client". If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource.
 		/// </summary>
-		public bool? DryRun { get; set; }
+		public string? DryRun { get; set; }
+		/// <summary>
+		/// --field-manager
+		///
+		/// Name of the manager used to track field ownership.
+		/// </summary>
+		public string? FieldManager { get; set; }
 		/// <summary>
 		/// -f, --filename
 		///
 		/// Filename, directory, or URL to files identifying the resource to autoscale.
 		/// </summary>
-		public string Filename { get; set; }
-		/// <summary>
-		/// --generator
-		///
-		/// The name of the API generator to use. Currently there is only 1 generator.
-		/// </summary>
-		public string Generator { get; set; }
+		public string? Filename { get; set; }
 		/// <summary>
 		/// -k, --kustomize
 		///
 		/// Process the kustomization directory. This flag can't be used together with -f or -R.
 		/// </summary>
-		public string Kustomize { get; set; }
+		public string? Kustomize { get; set; }
 		/// <summary>
 		/// --max
 		///
@@ -71,19 +71,13 @@ namespace Cake.Kubectl
 		///
 		/// The name for the newly created object. If not specified, the name of the input resource will be used.
 		/// </summary>
-		public string Name { get; set; }
+		public string? Name { get; set; }
 		/// <summary>
 		/// -o, --output
 		///
-		/// Output format. One of: json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-file.
+		/// Output format. One of: (json, yaml, name, go-template, go-template-file, template, templatefile, jsonpath, jsonpath-as-json, jsonpath-file).
 		/// </summary>
-		public string Output { get; set; }
-		/// <summary>
-		/// --record
-		///
-		/// Record current kubectl command in the resource annotation. If set to false, do not record the command. If set to true, record the command. If not set, default to updating the existing annotation value only if one already exists.
-		/// </summary>
-		public bool? Record { get; set; }
+		public string? Output { get; set; }
 		/// <summary>
 		/// -R, --recursive
 		///
@@ -97,10 +91,16 @@ namespace Cake.Kubectl
 		/// </summary>
 		public bool? SaveConfig { get; set; }
 		/// <summary>
+		/// --show-managed-fields
+		///
+		/// If true, keep the managedFields when printing objects in JSON or YAML format.
+		/// </summary>
+		public bool? ShowManagedFields { get; set; }
+		/// <summary>
 		/// --template
 		///
 		/// Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
 		/// </summary>
-		public string Template { get; set; }
+		public string? Template { get; set; }
 	}
 }

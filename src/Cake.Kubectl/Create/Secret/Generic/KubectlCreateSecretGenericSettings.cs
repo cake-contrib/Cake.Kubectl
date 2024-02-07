@@ -17,16 +17,16 @@ namespace Cake.Kubectl
 	///   kubectl create secret generic my-secret --from-file=path/to/bar
 	/// 
 	///   # Create a new secret named my-secret with specified keys instead of names on disk
-	///   kubectl create secret generic my-secret --from-file=ssh-privatekey=~/.ssh/id_rsa --from-file=ssh-publickey=~/.ssh/id_rsa.pub
+	///   kubectl create secret generic my-secret --from-file=ssh-privatekey=path/to/id_rsa --from-file=ssh-publickey=path/to/id_rsa.pub
 	/// 
 	///   # Create a new secret named my-secret with key1=supersecret and key2=topsecret
 	///   kubectl create secret generic my-secret --from-literal=key1=supersecret --from-literal=key2=topsecret
 	/// 
 	///   # Create a new secret named my-secret using a combination of a file and a literal
-	///   kubectl create secret generic my-secret --from-file=ssh-privatekey=~/.ssh/id_rsa --from-literal=passphrase=topsecret
+	///   kubectl create secret generic my-secret --from-file=ssh-privatekey=path/to/id_rsa --from-literal=passphrase=topsecret
 	/// 
-	///   # Create a new secret named my-secret from an env file
-	///   kubectl create secret generic my-secret --from-env-file=path/to/bar.env
+	///   # Create a new secret named my-secret from env files
+	///   kubectl create secret generic my-secret --from-env-file=path/to/foo.env --from-env-file=path/to/bar.env
 	/// </example>
 	[CompilerGenerated]
 	public sealed class KubectlCreateSecretGenericSettings : AutoToolSettings
@@ -46,39 +46,39 @@ namespace Cake.Kubectl
 		/// <summary>
 		/// --dry-run
 		///
-		/// If true, only print the object that would be sent, without sending it.
+		/// Must be "none", "server", or "client". If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource.
 		/// </summary>
-		public bool? DryRun { get; set; }
+		public string? DryRun { get; set; }
+		/// <summary>
+		/// --field-manager
+		///
+		/// Name of the manager used to track field ownership.
+		/// </summary>
+		public string? FieldManager { get; set; }
 		/// <summary>
 		/// --from-env-file
 		///
-		/// Specify the path to a file to read lines of key=val pairs to create a secret (i.e. a Docker .env file).
+		/// Specify the path to a file to read lines of key=val pairs to create a secret.
 		/// </summary>
-		public string FromEnvFile { get; set; }
+		public string? FromEnvFile { get; set; }
 		/// <summary>
 		/// --from-file
 		///
 		/// Key files can be specified using their file path, in which case a default name will be given to them, or optionally with a name and file path, in which case the given name will be used.  Specifying a directory will iterate each named file in the directory that is a valid secret key.
 		/// </summary>
-		public string FromFile { get; set; }
+		public string? FromFile { get; set; }
 		/// <summary>
 		/// --from-literal
 		///
 		/// Specify a key and literal value to insert in secret (i.e. mykey=somevalue)
 		/// </summary>
-		public string FromLiteral { get; set; }
-		/// <summary>
-		/// --generator
-		///
-		/// The name of the API generator to use.
-		/// </summary>
-		public string Generator { get; set; }
+		public string? FromLiteral { get; set; }
 		/// <summary>
 		/// -o, --output
 		///
-		/// Output format. One of: json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-file.
+		/// Output format. One of: (json, yaml, name, go-template, go-template-file, template, templatefile, jsonpath, jsonpath-as-json, jsonpath-file).
 		/// </summary>
-		public string Output { get; set; }
+		public string? Output { get; set; }
 		/// <summary>
 		/// --save-config
 		///
@@ -86,22 +86,28 @@ namespace Cake.Kubectl
 		/// </summary>
 		public bool? SaveConfig { get; set; }
 		/// <summary>
+		/// --show-managed-fields
+		///
+		/// If true, keep the managedFields when printing objects in JSON or YAML format.
+		/// </summary>
+		public bool? ShowManagedFields { get; set; }
+		/// <summary>
 		/// --template
 		///
 		/// Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
 		/// </summary>
-		public string Template { get; set; }
+		public string? Template { get; set; }
 		/// <summary>
 		/// --type
 		///
 		/// The type of secret to create
 		/// </summary>
-		public string Type { get; set; }
+		public string? Type { get; set; }
 		/// <summary>
 		/// --validate
 		///
-		/// If true, use a schema to validate the input before sending it
+		/// Must be one of: strict (or true), warn, ignore (or false). 		"true" or "strict" will use a schema to validate the input and fail the request if invalid. It will perform server side validation if ServerSideFieldValidation is enabled on the api-server, but will fall back to less reliable client-side validation if not. 		"warn" will warn about unknown or duplicate fields without blocking the request if server-side field validation is enabled on the API server, and behave as "ignore" otherwise. 		"false" or "ignore" will not perform any schema validation, silently dropping any unknown or duplicate fields.
 		/// </summary>
-		public bool? Validate { get; set; }
+		public string? Validate { get; set; }
 	}
 }

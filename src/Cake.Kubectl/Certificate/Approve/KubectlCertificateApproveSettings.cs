@@ -10,6 +10,10 @@ namespace Cake.Kubectl
 	/// 
 	///  SECURITY NOTICE: Depending on the requested attributes, the issued certificate can potentially grant a requester access to cluster resources or to authenticate as a requested identity. Before approving a CSR, ensure you understand what the signed certificate can do.
 	/// </summary>
+	/// <example>
+	///   # Approve CSR 'csr-sqgzp'
+	///   kubectl certificate approve csr-sqgzp
+	/// </example>
 	[CompilerGenerated]
 	public sealed class KubectlCertificateApproveSettings : AutoToolSettings
 	{
@@ -24,7 +28,7 @@ namespace Cake.Kubectl
 		///
 		/// Filename, directory, or URL to files identifying the resource to update
 		/// </summary>
-		public string Filename { get; set; }
+		public string? Filename { get; set; }
 		/// <summary>
 		/// --force
 		///
@@ -36,13 +40,13 @@ namespace Cake.Kubectl
 		///
 		/// Process the kustomization directory. This flag can't be used together with -f or -R.
 		/// </summary>
-		public string Kustomize { get; set; }
+		public string? Kustomize { get; set; }
 		/// <summary>
 		/// -o, --output
 		///
-		/// Output format. One of: json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-file.
+		/// Output format. One of: (json, yaml, name, go-template, go-template-file, template, templatefile, jsonpath, jsonpath-as-json, jsonpath-file).
 		/// </summary>
-		public string Output { get; set; }
+		public string? Output { get; set; }
 		/// <summary>
 		/// -R, --recursive
 		///
@@ -50,10 +54,16 @@ namespace Cake.Kubectl
 		/// </summary>
 		public bool? Recursive { get; set; }
 		/// <summary>
+		/// --show-managed-fields
+		///
+		/// If true, keep the managedFields when printing objects in JSON or YAML format.
+		/// </summary>
+		public bool? ShowManagedFields { get; set; }
+		/// <summary>
 		/// --template
 		///
 		/// Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
 		/// </summary>
-		public string Template { get; set; }
+		public string? Template { get; set; }
 	}
 }

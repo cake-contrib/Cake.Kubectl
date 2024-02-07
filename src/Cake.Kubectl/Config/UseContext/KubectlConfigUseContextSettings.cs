@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 namespace Cake.Kubectl
 {
 	/// <summary>
-	/// Sets the current-context in a kubeconfig file
+	/// Set the current-context in a kubeconfig file.
 	///
 	/// </summary>
 	/// <example>

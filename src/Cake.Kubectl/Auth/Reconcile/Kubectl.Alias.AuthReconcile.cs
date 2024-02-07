@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Reconciles rules for RBAC Role, RoleBinding, ClusterRole, and ClusterRole binding objects.
+		/// Reconciles rules for RBAC role, role binding, cluster role, and cluster role binding objects.
 		///
 		/// 
 		///  Missing objects are created, and the containing namespace is created for namespaced objects, if required.
@@ -34,7 +34,7 @@ namespace Cake.Kubectl
 			runner.Run("auth reconcile", settings ?? new KubectlAuthReconcileSettings(), arguments);
 		}
 		/// <summary>
-		/// Reconciles rules for RBAC Role, RoleBinding, ClusterRole, and ClusterRole binding objects.
+		/// Reconciles rules for RBAC role, role binding, cluster role, and cluster role binding objects.
 		///
 		/// 
 		///  Missing objects are created, and the containing namespace is created for namespaced objects, if required.

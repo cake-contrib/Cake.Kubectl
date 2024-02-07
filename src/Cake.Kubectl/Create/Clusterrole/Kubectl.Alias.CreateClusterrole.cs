@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Create a ClusterRole.
+		/// Create a cluster role.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>
@@ -26,7 +26,7 @@ namespace Cake.Kubectl
 			runner.Run("create clusterrole", settings ?? new KubectlCreateClusterroleSettings(), arguments);
 		}
 		/// <summary>
-		/// Create a ClusterRole.
+		/// Create a cluster role.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>

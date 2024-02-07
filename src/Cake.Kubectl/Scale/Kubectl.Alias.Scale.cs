@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Set a new size for a Deployment, ReplicaSet, Replication Controller, or StatefulSet.
+		/// Set a new size for a deployment, replica set, replication controller, or stateful set.
 		///
 		/// 
 		///  Scale also allows users to specify one or more preconditions for the scale action.
@@ -30,7 +30,7 @@ namespace Cake.Kubectl
 			runner.Run("scale", settings ?? new KubectlScaleSettings(), arguments);
 		}
 		/// <summary>
-		/// Set a new size for a Deployment, ReplicaSet, Replication Controller, or StatefulSet.
+		/// Set a new size for a deployment, replica set, replication controller, or stateful set.
 		///
 		/// 
 		///  Scale also allows users to specify one or more preconditions for the scale action.

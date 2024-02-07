@@ -3,6 +3,7 @@ using Cake.Core.Configuration;
 using Cake.Core.Diagnostics;
 using Cake.Core.IO;
 using Cake.Core.Tooling;
+using Cake.Testing;
 using Cake.Testing.Fixtures;
 using NSubstitute;
 using System;
@@ -20,7 +21,6 @@ namespace Cake.Kubectl.Tests.Create
         public IRegistry Registry => Registry;
         public ICakeDataResolver Data => throw new NotImplementedException();
         ICakeConfiguration ICakeContext.Configuration => throw new NotImplementedException();
-
         public KubectlCreateFixture() : base("kubectl")
         {
             ProcessRunner.Process.SetStandardOutput(new string[] { });

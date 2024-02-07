@@ -9,12 +9,12 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Display Resource (CPU/Memory/Storage) usage.
+		/// Display Resource (CPU/Memory) usage.
 		///
 		/// 
 		///  The top command allows you to see the resource consumption for nodes or pods.
 		/// 
-		///  This command requires Heapster to be correctly configured and working on the server.
+		///  This command requires Metrics Server to be correctly configured and working on the server.
 		/// </summary>
 		/// <param name="context">The context.</param>
 		/// <param name="settings">The settings.</param>
@@ -30,12 +30,12 @@ namespace Cake.Kubectl
 			runner.Run("top", settings ?? new KubectlTopSettings(), arguments);
 		}
 		/// <summary>
-		/// Display Resource (CPU/Memory/Storage) usage.
+		/// Display Resource (CPU/Memory) usage.
 		///
 		/// 
 		///  The top command allows you to see the resource consumption for nodes or pods.
 		/// 
-		///  This command requires Heapster to be correctly configured and working on the server.
+		///  This command requires Metrics Server to be correctly configured and working on the server.
 		/// </summary>
 		/// <param name="context">The context.</param>
 		/// <param name="settings">The settings.</param>

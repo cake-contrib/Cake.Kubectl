@@ -8,6 +8,10 @@ namespace Cake.Kubectl
 	/// 
 	///  Available plugin files are those that are: - executable - anywhere on the user's PATH - begin with "kubectl-"
 	/// </summary>
+	/// <example>
+	///   # List all available plugins
+	///   kubectl plugin list
+	/// </example>
 	[CompilerGenerated]
 	public sealed class KubectlPluginListSettings : AutoToolSettings
 	{

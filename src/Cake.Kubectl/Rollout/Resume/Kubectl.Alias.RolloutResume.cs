@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Resume a paused resource
+		/// Resume a paused resource.
 		///
 		/// 
 		///  Paused resources will not be reconciled by a controller. By resuming a resource, we allow it to be reconciled again. Currently only deployments support being resumed.
@@ -28,7 +28,7 @@ namespace Cake.Kubectl
 			runner.Run("rollout resume", settings ?? new KubectlRolloutResumeSettings(), arguments);
 		}
 		/// <summary>
-		/// Resume a paused resource
+		/// Resume a paused resource.
 		///
 		/// 
 		///  Paused resources will not be reconciled by a controller. By resuming a resource, we allow it to be reconciled again. Currently only deployments support being resumed.

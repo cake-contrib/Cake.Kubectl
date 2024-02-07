@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Rollback to a previous rollout.
+		/// Roll back to a previous rollout.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>
@@ -26,7 +26,7 @@ namespace Cake.Kubectl
 			runner.Run("rollout undo", settings ?? new KubectlRolloutUndoSettings(), arguments);
 		}
 		/// <summary>
-		/// Rollback to a previous rollout.
+		/// Roll back to a previous rollout.
 		///
 		/// </summary>
 		/// <param name="context">The context.</param>

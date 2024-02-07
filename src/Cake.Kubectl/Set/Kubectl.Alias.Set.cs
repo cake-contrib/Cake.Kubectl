@@ -9,7 +9,7 @@ namespace Cake.Kubectl
 	partial class KubectlAliases
 	{
 		/// <summary>
-		/// Configure application resources
+		/// Configure application resources.
 		///
 		/// 
 		///  These commands help you make changes to existing application resources.
@@ -28,7 +28,7 @@ namespace Cake.Kubectl
 			runner.Run("set", settings ?? new KubectlSetSettings(), arguments);
 		}
 		/// <summary>
-		/// Configure application resources
+		/// Configure application resources.
 		///
 		/// 
 		///  These commands help you make changes to existing application resources.
